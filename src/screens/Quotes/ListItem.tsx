@@ -14,7 +14,7 @@ export const ListItem = React.memo(({quota}: Props) => {
   useEffect(() => {
     Animated.timing(animatedValue, {
       toValue: 1,
-      duration: 300,
+      duration: 1000,
       useNativeDriver: false,
     }).start(() => {
       setAnimatedValue(new Animated.Value(0));
