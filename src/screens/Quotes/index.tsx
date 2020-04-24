@@ -7,12 +7,13 @@ import {QuotesList} from './List';
 import styles from './styles';
 
 const quoteSymbols = [
-  'EURUSD',
-  'GBPUSD',
-  'USDJPY',
-  'USDCHF',
-  'USDCAD',
-  'AUDUSD',
+    'GOLD',
+    'EURUSD',
+    'GBPUSD',
+    'USDJPY',
+    'USDCHF',
+    'USDCAD',
+    'AUDUSD',
 ];
 
 export const Quotes = () => {
@@ -22,7 +23,11 @@ export const Quotes = () => {
     const client = io('https://qrtm1.ifxid.com:8443');
 
     client.on('connect', () => {
-      client.emit('subscribe', quoteSymbols);
+        client.emit('subscribe', quoteSymbols);
+    });
+
+    client.on('disconnect', () => {
+        client.emit('unsubscribe', quoteSymbols);
     });
 
     client.on('quotes', (data: IData) => {
