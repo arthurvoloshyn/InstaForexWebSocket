@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {FlatList} from 'react-native';
 
 import {IQuota} from '../../types';
-import {ListItem} from './ListItem';
+import ListItem from './ListItem';
 
 type Props = {
   quotes: IQuota[];

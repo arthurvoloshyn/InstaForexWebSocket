@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect, useState, memo} from 'react';
 import {View, Text, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {IQuota} from '../../types';
@@ -8,7 +8,7 @@ type Props = {
   quota: IQuota;
 };
 
-export const ListItem: FC<Props> = React.memo(({ quota }) => {
+const ListItem: FC<Props> = ({ quota }) => {
   const [animatedValue, setAnimatedValue] = useState(new Animated.Value(0));
 
   useEffect(() => {
@@ -70,4 +70,6 @@ export const ListItem: FC<Props> = React.memo(({ quota }) => {
         </View>
     </Animated.View>
   );
-});
+};
+
+export default memo(ListItem);
