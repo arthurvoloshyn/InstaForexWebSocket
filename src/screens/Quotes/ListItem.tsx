@@ -33,8 +33,7 @@ const ListItem: FC<Props> = ({ quota }) => {
   });
 
   const animatedStyle = {
-    backgroundColor: interpolateColor,
-      color: '#fff'
+    backgroundColor: interpolateColor
   };
   const isNegative = quota.change < 0;
 
