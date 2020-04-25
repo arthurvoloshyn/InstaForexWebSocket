@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Layout from '../../services/getDeviceLayout';
 
 export default StyleSheet.create({
   safeArea: {
@@ -25,11 +26,11 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   symbol: {
-    fontSize: 14,
+    fontSize: Layout.isSmallDevice ? 14 : 18,
     fontWeight: 'bold',
   },
   infoText: {
-    fontSize: 14,
+    fontSize: Layout.isSmallDevice ? 14 : 15,
     fontWeight: '500',
     textAlign: 'right',
   },

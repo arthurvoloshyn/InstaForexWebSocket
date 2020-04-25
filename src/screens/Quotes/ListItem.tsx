@@ -1,6 +1,7 @@
-import React, {FC, useEffect, useState, memo} from 'react';
-import {View, Text, Animated} from 'react-native';
+import React, {FC, useEffect, useState, memo, useRef} from 'react';
+import {View, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AppText from "../../components/AppText";
 import {IQuota} from '../../types';
 import styles from './styles';
 
@@ -9,7 +10,8 @@ type Props = {
 };
 
 const ListItem: FC<Props> = ({ quota }) => {
-  const [animatedValue, setAnimatedValue] = useState(new Animated.Value(0));
+    const value = useRef(new Animated.Value(0)).current;
+    const [animatedValue, setAnimatedValue] = useState(value);
 
   useEffect(() => {
     Animated.timing(animatedValue, {
@@ -17,7 +19,7 @@ const ListItem: FC<Props> = ({ quota }) => {
       duration: 1000,
       useNativeDriver: false,
     }).start(() => {
-      setAnimatedValue(new Animated.Value(0));
+      setAnimatedValue(value);
     });
   }, [quota.change]);
 
@@ -39,26 +41,26 @@ const ListItem: FC<Props> = ({ quota }) => {
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
         <View style={styles.textContainer}>
-            <Text style={styles.symbol}>{quota.symbol}</Text>
+            <AppText style={styles.symbol}>{quota.symbol}</AppText>
         </View>
 
         <View style={styles.textContainer}>
-            <Text style={styles.infoText}>{quota.ask}</Text>
+            <AppText style={styles.infoText}>{quota.ask}</AppText>
         </View>
 
         <View style={styles.textContainer}>
-            <Text style={styles.infoText}>{quota.bid}</Text>
+            <AppText style={styles.infoText}>{quota.bid}</AppText>
         </View>
 
         <View style={styles.textContainer}>
-          <Text
+          <AppText
               style={[
                 styles.infoText,
                 // eslint-disable-next-line react-native/no-inline-styles
                 {color: isNegative ? '#8e2b2b' : '#008000'},
               ]}>
             {quota.change}
-          </Text>
+          </AppText>
         </View>
 
         <View style={styles.changeFieldContainer}>
