@@ -8,7 +8,7 @@ type Props = {
   quota: IQuota;
 };
 
-export const ListItem: FC<Props> = React.memo(({ quota }: Props) => {
+export const ListItem: FC<Props> = React.memo(({ quota }) => {
   const [animatedValue, setAnimatedValue] = useState(new Animated.Value(0));
 
   useEffect(() => {
