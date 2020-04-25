@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from 'react';
-import { Text, TextStyle } from 'react-native';
+import { Text, StyleProp, TextStyle } from 'react-native';
 
 type Props = {
   children: ReactNode;
-  style?: TextStyle;
+  style?: StyleProp<TextStyle>;
   bold?: boolean;
 };
 
