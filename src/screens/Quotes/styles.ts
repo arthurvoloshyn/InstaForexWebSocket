@@ -6,6 +6,7 @@ export default StyleSheet.create({
     marginTop: 24,
   },
   container: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -14,33 +15,23 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'gray',
   },
-  leftContent: {
-    flex: 0.3,
-  },
-  rightContent: {
-    flex: 0.7,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  symbol: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
   textContainer: {
-    flex: 0.3,
-    alignItems: 'flex-end',
+    flex: 1,
     marginRight: 6,
   },
   changeFieldContainer: {
-    flex: 0.4,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
+  symbol: {
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
   infoText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '500',
+    textAlign: 'right',
   },
   icon: {
     marginLeft: 4,
