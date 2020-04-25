@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import io from 'socket.io-client';
 import {SafeAreaView} from 'react-native';
 
@@ -16,7 +16,7 @@ const quoteSymbols = [
     'AUDUSD',
 ];
 
-export const Quotes = () => {
+const Quotes: FC = () => {
   const [quotesMap, setQuotesMap] = useState<IQuotaMap>({});
 
   useEffect(() => {
@@ -52,3 +52,5 @@ export const Quotes = () => {
     </SafeAreaView>
   );
 };
+
+export default Quotes;
