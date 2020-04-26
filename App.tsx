@@ -6,7 +6,7 @@ import Main from "./src/layouts/Main";
 import ErrorBoundary from './src/components/ErrorBoundary';
 
 const App: FC = () => {
-    const [fontsLoaded] = useFonts(Files.fonts);
+    const [fontsLoaded]: [boolean] = useFonts(Files.fonts);
 
     if (!fontsLoaded) return <AppLoading />;
 
