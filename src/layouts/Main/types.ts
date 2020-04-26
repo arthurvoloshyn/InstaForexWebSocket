@@ -1,5 +1,5 @@
 import { ViewStyle } from "react-native";
 
-export interface Style {
+export type Style = {
     container: ViewStyle;
-}
+};
