@@ -1,11 +1,8 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FC} from 'react';
 import { View } from 'react-native';
+import {Props} from "./types";
 import AppText from '../AppText';
 import styles from './styles';
-
-type Props = {
-    children?: ReactNode;
-};
 
 const ErrorIndicator: FC<Props> = ({ children }) => (
   <View style={styles.error}>

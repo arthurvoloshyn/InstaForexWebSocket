@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
 import Themes from '../../constants/themes';
+import { Style } from './types';
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<Style>({
   error: {
     alignItems: 'center',
     flex: 1,
