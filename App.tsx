@@ -1,9 +1,8 @@
 import React, {FC} from 'react';
-import {StatusBar} from 'react-native';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 import Files from './src/constants/files';
-import Quotes from './src/screens/Quotes';
+import Main from "./src/layouts/Main";
 import ErrorBoundary from './src/components/ErrorBoundary';
 
 const App: FC = () => {
@@ -13,8 +12,7 @@ const App: FC = () => {
 
     return (
         <ErrorBoundary>
-            <StatusBar barStyle="dark-content"/>
-            <Quotes/>
+            <Main />
         </ErrorBoundary>
     );
 };
