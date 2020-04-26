@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
 import Themes from '../../constants/themes';
 import OS from '../../services/detectDeviceOS';
 import AppStatusBar from '../../components/AppStatusBar';
