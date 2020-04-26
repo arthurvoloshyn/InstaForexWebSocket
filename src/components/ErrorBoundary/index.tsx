@@ -1,24 +1,17 @@
-import React, { ReactNode, Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import ErrorIndicator from '../ErrorIndicator';
-
-type Props = {
-  children: ReactNode;
-};
-
-type State = {
-  hasError: boolean;
-};
+import { Props, State, Error } from './types';
 
 class ErrorBoundary extends Component<Props, State> {
   state = {
     hasError: false,
   };
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): Error {
     return { hasError: true };
   }
 
-  render() {
+  render(): ReactNode {
     const { hasError } = this.state;
     const { children } = this.props;
 
