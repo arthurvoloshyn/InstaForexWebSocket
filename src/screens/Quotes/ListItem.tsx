@@ -58,7 +58,7 @@ const ListItem: FC<Props> = ({ quota }) => {
                 // eslint-disable-next-line react-native/no-inline-styles
                 {color: isNegative ? '#8e2b2b' : '#008000'},
               ]}>
-            {quota.change}
+            {isNegative ? quota.change : `+${quota.change}`}
           </AppText>
         </View>
 
