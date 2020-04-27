@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
                 borderBottomColor: Themes.primaryColor,
                 borderBottomWidth: 1,
             },
-            android: {
+            default: {
                 backgroundColor: Themes.primaryColor,
             },
         }),
