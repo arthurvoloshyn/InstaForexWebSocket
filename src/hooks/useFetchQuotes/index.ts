@@ -1,30 +1,36 @@
-import {useEffect, useCallback, useState} from 'react';
+import {useEffect, useCallback, useReducer} from 'react';
 import io from "socket.io-client";
 import { BASE_PATH } from '../../constants/paths';
 import { quoteSymbols } from '../../constants/lists';
-import { sortBySymbol } from '../../utils';
+import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
+import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
 import {IData, IQuota, IQuotaMap} from "../../types";
 
 const useFetchQuotes = () => {
-    const [quotesMap, setQuotesMap] = useState<IQuotaMap>({});
+    const [state, dispatch] = useReducer(dataFetchReducer, initState);
 
-    const fetchData: () => () => void = useCallback(() => {
+    const fetchData = useCallback(() => {
         const client = io(BASE_PATH);
 
-        client.on('connect', () => {
-            client.emit('subscribe', quoteSymbols);
-        });
+        dispatch(fetchInit());
 
-        client.on('disconnect', () => {
-            client.emit('unsubscribe', quoteSymbols);
-        });
+        try {
+            client.on('connect', () => {
+                client.emit('subscribe', quoteSymbols);
+            });
 
-        client.on('quotes', (data: IData) => {
-            setQuotesMap((prevState) => ({
-                ...prevState,
-                [data.msg.symbol]: data.msg,
-            }));
-        });
+            client.on('disconnect', () => {
+                client.emit('unsubscribe', quoteSymbols);
+            });
+
+            client.on('quotes', (data: IData) => {
+                const { msg = {} }: IQuota = data;
+
+                dispatch(fetchSuccess(msg));
+            });
+        } catch {
+            dispatch(fetchFailure());
+        }
 
         return () => {
             client.close();
@@ -35,9 +41,7 @@ const useFetchQuotes = () => {
         fetchData();
     }, [fetchData]);
 
-    const quotes: IQuota[] = sortBySymbol(quotesMap);
-
-    return [quotes, fetchData];
+    return [state, fetchData];
 };
 
 export default useFetchQuotes;
