@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 import Files from './src/constants/files';
+import { QuotesProvider } from './src/contextes/quotesContext';
 import Main from "./src/layouts/Main";
 import ErrorBoundary from './src/components/ErrorBoundary';
 
@@ -12,7 +13,9 @@ const App: FC = () => {
 
     return (
         <ErrorBoundary>
-            <Main />
+            <QuotesProvider>
+                <Main />
+            </QuotesProvider>
         </ErrorBoundary>
     );
 };
