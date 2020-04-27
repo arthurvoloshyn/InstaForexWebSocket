@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         }),
     },
     text: {
-        color: OS.isIOS ? Themes.mainColor : '#fff',
+        color: OS.isIOS ? Themes.primaryColor : '#fff',
         fontSize: 20,
     },
 });

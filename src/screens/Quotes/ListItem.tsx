@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState, memo, useRef} from 'react';
+import React, {FC, useEffect, useState, memo} from 'react';
 import {View, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppText from "../../components/AppText";
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const ListItem: FC<Props> = ({ quota }) => {
-    const value = useRef(new Animated.Value(0)).current;
+    const value = new Animated.Value(0);
     const [animatedValue, setAnimatedValue] = useState(value);
 
   useEffect(() => {
