@@ -7,6 +7,6 @@ export type IQuota = {
   symbol: string;
 };
 
-export type IQuotaMap = {[key: string]: IQuota | {}};
+export type IQuotaMap = {[key: string]: IQuota};
 
 export type IData = {msg: IQuota};
