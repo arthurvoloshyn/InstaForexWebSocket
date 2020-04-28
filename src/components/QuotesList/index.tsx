@@ -6,7 +6,7 @@ import { Props } from './types';
 
 const QuotesList: FC<Props> = ({quotes}) => {
   const renderItem = useCallback(({item}: {item: IQuota}) => <Quote quota={item} />, []);
-  const keyExtractor = useCallback((item) => item.symbol, []);
+  const keyExtractor = useCallback(({ symbol }) => symbol, []);
 
   return (
     <FlatList
