@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 
 export type Props = {
-    children: ReactNode;
+    children: ReactNode,
 };
 
 export type State = {
-    hasError: boolean;
+    hasError: boolean,
 };
 
 export type Error = {
-    hasError: boolean;
+    hasError: boolean,
 };

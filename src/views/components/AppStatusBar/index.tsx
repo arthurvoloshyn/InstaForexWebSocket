@@ -1,13 +1,8 @@
 import React, {FC} from 'react';
-import {StatusBar, View, StatusBarStyle} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import Themes from '../../../constants/themes';
+import { Props } from './types';
 import styles from './styles';
-
-type Props = {
-  backgroundColor?: string;
-  translucent?: boolean;
-  barStyle?: StatusBarStyle;
-};
 
 const AppStatusBar: FC<Props> = ({ backgroundColor, translucent, ...attrs }) => {
   const statusBarStyles = { backgroundColor };

@@ -1,11 +1,6 @@
-import React, { FC, ReactNode } from 'react';
-import { Text, StyleProp, TextStyle } from 'react-native';
-
-type Props = {
-  children: ReactNode;
-  style?: StyleProp<TextStyle>;
-  bold?: boolean;
-};
+import React, { FC } from 'react';
+import { Text } from 'react-native';
+import { Props } from './types';
 
 const AppText: FC<Props> = ({ style, children, bold, ...attrs }) => {
   const textStyles = { fontFamily: bold ? 'roboto-bold' : 'roboto-regular' };
