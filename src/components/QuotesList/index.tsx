@@ -2,17 +2,14 @@ import React, {useCallback} from 'react';
 import {FlatList} from 'react-native';
 
 import {IQuota} from '../../types';
-import ListItem from './ListItem';
+import Quote from '../Quote';
 
 type Props = {
   quotes: IQuota[];
 };
 
-export const QuotesList = ({quotes}: Props) => {
-  const renderItem = useCallback(({item}: {item: IQuota}) => {
-    return <ListItem quota={item} />;
-  }, []);
-
+const QuotesList = ({quotes}: Props) => {
+  const renderItem = useCallback(({item}: {item: IQuota}) => <Quote quota={item} />, []);
   const keyExtractor = useCallback((item) => item.symbol, []);
 
   return (
@@ -23,3 +20,5 @@ export const QuotesList = ({quotes}: Props) => {
     />
   );
 };
+
+export default QuotesList;
