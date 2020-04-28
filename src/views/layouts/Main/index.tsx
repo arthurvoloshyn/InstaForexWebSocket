@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { View } from 'react-native';
-import Themes from '../../constants/themes';
-import OS from '../../services/detectDeviceOS';
+import Themes from '../../../constants/themes';
+import OS from '../../../services/detectDeviceOS';
 import Quotes from "../../screens/Quotes";
 import AppStatusBar from '../../components/AppStatusBar';
 import NavBar from '../../components/NavBar';

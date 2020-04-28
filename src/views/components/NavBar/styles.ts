@@ -1,6 +1,6 @@
 import {Platform, StyleSheet} from "react-native";
-import Themes from "../../constants/themes";
-import OS from "../../services/detectDeviceOS";
+import Themes from "../../../constants/themes";
+import OS from "../../../services/detectDeviceOS";
 
 const styles = StyleSheet.create({
     navbar: {

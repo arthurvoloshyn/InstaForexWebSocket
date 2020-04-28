@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {StatusBar, View, StatusBarStyle} from 'react-native';
-import Themes from '../../constants/themes';
+import Themes from '../../../constants/themes';
 import styles from './styles';
 
 type Props = {

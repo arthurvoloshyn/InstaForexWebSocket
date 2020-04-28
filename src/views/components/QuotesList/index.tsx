@@ -1,6 +1,6 @@
 import React, {useCallback, FC} from 'react';
 import {FlatList} from 'react-native';
-import {IQuota} from '../../types';
+import {IQuota} from '../../../types';
 import Quote from '../Quote';
 import { Props } from './types';
 

@@ -1,5 +1,5 @@
 import {ViewStyle, TextStyle} from "react-native";
-import {IQuota} from "../../types";
+import {IQuota} from "../../../types";
 
 export type Props = {
     quota: IQuota,

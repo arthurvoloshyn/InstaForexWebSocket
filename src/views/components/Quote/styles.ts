@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import Layout from '../../services/getDeviceLayout';
+import Layout from '../../../services/getDeviceLayout';
 import { Style } from './types';
 
 export default StyleSheet.create<Style>({

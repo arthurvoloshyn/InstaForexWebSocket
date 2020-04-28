@@ -1,7 +1,7 @@
 import React, {useContext, FC} from 'react';
 import {SafeAreaView} from 'react-native';
-import Themes from "../../constants/themes";
-import { QuotesContext } from '../../contextes/quotesContext';
+import Themes from "../../../constants/themes";
+import { QuotesContext } from '../../../contextes/quotesContext';
 import QuotesList from '../../components/QuotesList';
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppLoader from '../../components/AppLoader';

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { View, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
-import Themes from '../../constants/themes';
-import OS from '../../services/detectDeviceOS';
+import Themes from '../../../constants/themes';
+import OS from '../../../services/detectDeviceOS';
 import AppText from '../AppText';
 import { Props } from './types';
 import styles from './styles';
