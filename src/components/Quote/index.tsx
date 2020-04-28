@@ -2,12 +2,8 @@ import React, {FC, useEffect, useState, memo} from 'react';
 import {View, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppText from "../AppText";
-import {IQuota} from '../../types';
-import styles from '../../screens/Quotes/styles';
-
-type Props = {
-  quota: IQuota;
-};
+import { Props } from './types';
+import styles from './styles';
 
 const Quote: FC<Props> = ({ quota }) => {
     const value = new Animated.Value(0);
