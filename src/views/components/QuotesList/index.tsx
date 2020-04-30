@@ -1,12 +1,11 @@
 import React, {useCallback, FC} from 'react';
 import {FlatList} from 'react-native';
-import {IQuota} from '../../../types';
 import Quote from '../Quote';
-import { Props } from './types';
+import { Props, IRenderItem, IkeyExtractor } from './types';
 
 const QuotesList: FC<Props> = ({quotes}) => {
-  const renderItem = useCallback(({item}: {item: IQuota}) => <Quote quota={item} />, []);
-  const keyExtractor = useCallback(({ symbol }) => symbol, []);
+  const renderItem: IRenderItem = useCallback(({ item }) => <Quote quota={item} />, []);
+  const keyExtractor: IkeyExtractor = useCallback(({ symbol }) => symbol, []);
 
   return (
     <FlatList
