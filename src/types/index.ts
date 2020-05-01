@@ -11,9 +11,17 @@ export type IQuotaMap = { [key: string]: IQuota };
 
 export type IData = { msg: IQuota };
 
-export type IContext = {
+export type IContextValue = {
   fetchData: () => void,
   isLoading: boolean,
   isError: boolean,
-  data: IQuota[] | {},
+  data: IQuota[],
 };
+
+export type IReducerState = {
+  data: IQuotaMap,
+  isLoading: boolean,
+  isError: boolean,
+};
+
+export type IFetchQuotes = [IReducerState, (() => () => void)];

@@ -1,5 +1,7 @@
-import { FETCH_SUCCESS, FETCH_FAILURE, FETCH_INIT } from '../constants/actionTypes';
+import actionTypes from '../constants/actionTypes';
+import { IQuota } from "../types";
+import { IAction } from './types';
 
-export const fetchInit = () => ({ type: FETCH_INIT });
-export const fetchSuccess = data => ({ type: FETCH_SUCCESS, data });
-export const fetchFailure = () => ({ type: FETCH_FAILURE });
+export const fetchInit = (): IAction => ({ type: actionTypes.FETCH_INIT });
+export const fetchSuccess = (data: IQuota): IAction => ({ type: actionTypes.FETCH_SUCCESS, data });
+export const fetchFailure = (): IAction => ({ type: actionTypes.FETCH_FAILURE });

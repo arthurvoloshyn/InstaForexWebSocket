@@ -6,7 +6,7 @@ import QuotesList from '../../components/QuotesList';
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppLoader from '../../components/AppLoader';
 import AppButton from '../../components/AppButton';
-import { IContext } from '../../../types';
+import { IContextValue } from '../../../types';
 import styles from './styles';
 
 const Quotes: FC = () => {
@@ -15,7 +15,7 @@ const Quotes: FC = () => {
         isError,
         isLoading,
         fetchData,
-    } = useContext<IContext>(QuotesContext);
+    } = useContext<IContextValue>(QuotesContext);
 
     if (isError) {
         return (

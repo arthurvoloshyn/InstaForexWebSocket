@@ -1,6 +1,7 @@
-import { FETCH_INIT, FETCH_FAILURE, FETCH_SUCCESS } from '../../constants/actionTypes';
+import actionTypes from '../../constants/actionTypes';
+import { IReducerState } from '../../types';
 
-export const initState = {
+export const initState: IReducerState = {
   isLoading: false,
   isError: false,
   data: {},
@@ -8,13 +9,13 @@ export const initState = {
 
 const dataFetchReducer = (state = initState, { type, data }) => {
   switch (type) {
-    case FETCH_INIT:
+    case actionTypes.FETCH_INIT:
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
-    case FETCH_SUCCESS:
+    case actionTypes.FETCH_SUCCESS:
       return {
         ...state,
         isLoading: false,
@@ -24,7 +25,7 @@ const dataFetchReducer = (state = initState, { type, data }) => {
           [data.symbol]: data
         },
       };
-    case FETCH_FAILURE:
+    case actionTypes.FETCH_FAILURE:
       return {
         ...state,
         isLoading: false,

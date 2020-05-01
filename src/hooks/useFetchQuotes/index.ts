@@ -4,7 +4,7 @@ import { BASE_PATH } from '../../constants/paths';
 import { quoteSymbols } from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
-import {IData, IQuota, IQuotaMap} from "../../types";
+import {IData, IQuota} from "../../types";
 
 const useFetchQuotes = () => {
     const [state, dispatch] = useReducer(dataFetchReducer, initState);

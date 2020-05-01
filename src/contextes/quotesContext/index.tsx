@@ -2,18 +2,19 @@ import React, { createContext, FC } from 'react';
 import {sortBySymbol} from "../../utils";
 import { initState } from '../../reducers/dataFetchReducer';
 import useFetchQuotes from '../../hooks/useFetchQuotes';
-import {IQuota} from "../../types";
+import {IQuota, IContextValue, IFetchQuotes} from "../../types";
 import { Props } from './types';
 
-const initContextValue = {
+const initContextValue: IContextValue = {
   ...initState,
+  data: [],
   fetchData: () => {},
 };
 
-const QuotesContext = createContext(initContextValue);
+const QuotesContext = createContext<IContextValue>(initContextValue);
 
 const QuotesProvider: FC<Props> = ({ children }) => {
-  const [{ data: quotes, isLoading, isError }, fetchData] = useFetchQuotes();
+  const [{ data: quotes, isLoading, isError }, fetchData]: IFetchQuotes = useFetchQuotes();
   const data: IQuota[] = sortBySymbol(quotes);
 
   const value = {
