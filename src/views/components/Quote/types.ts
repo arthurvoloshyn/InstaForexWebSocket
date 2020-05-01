@@ -1,11 +1,11 @@
-import {ViewStyle, TextStyle} from "react-native";
+import { ViewStyle, TextStyle, Animated } from "react-native";
 import {IQuota} from "../../../types";
 
-export type Props = {
+export type IProps = {
     quota: IQuota,
 };
 
-export type Style = {
+export type IStyle = {
     container: ViewStyle,
     textContainer: TextStyle,
     changeFieldContainer: ViewStyle,
@@ -13,3 +13,7 @@ export type Style = {
     infoText: TextStyle,
     icon: ViewStyle | TextStyle,
 };
+
+export type IAnimatedStyle = {
+    backgroundColor: Animated.AnimatedInterpolation
+}

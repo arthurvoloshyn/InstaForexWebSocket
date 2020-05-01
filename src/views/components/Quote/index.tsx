@@ -2,10 +2,10 @@ import React, {FC, useEffect, useState, memo} from 'react';
 import {View, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppText from "../AppText";
-import { Props } from './types';
+import { IProps, IAnimatedStyle } from './types';
 import styles from './styles';
 
-const Quote: FC<Props> = ({ quota }) => {
+const Quote: FC<IProps> = ({ quota }) => {
     const value = new Animated.Value(0);
     const [animatedValue, setAnimatedValue] = useState(value);
 
@@ -28,10 +28,10 @@ const Quote: FC<Props> = ({ quota }) => {
     ],
   });
 
-  const animatedStyle = {
+  const animatedStyle: IAnimatedStyle = {
     backgroundColor: interpolateColor
   };
-  const isNegative = quota.change < 0;
+  const isNegative: boolean = quota.change < 0;
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>

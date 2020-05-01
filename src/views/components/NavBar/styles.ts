@@ -1,9 +1,9 @@
 import {Platform, StyleSheet} from "react-native";
 import Themes from "../../../constants/themes";
 import OS from "../../../services/detectDeviceOS";
-import { Style } from './types';
+import { IStyle } from './types';
 
-const styles = StyleSheet.create<Style>({
+const styles = StyleSheet.create<IStyle>({
     navbar: {
         height: 50,
         alignItems: 'center',

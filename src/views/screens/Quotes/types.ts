@@ -1,5 +1,5 @@
 import {ViewStyle} from "react-native";
 
-export type Style = {
+export type IStyle = {
     safeArea: ViewStyle,
 };

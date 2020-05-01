@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
 import Layout from '../../../services/getDeviceLayout';
-import { Style } from './types';
+import { IStyle } from './types';
 
-export default StyleSheet.create<Style>({
+export default StyleSheet.create<IStyle>({
   container: {
     flex: 1,
     flexDirection: 'row',

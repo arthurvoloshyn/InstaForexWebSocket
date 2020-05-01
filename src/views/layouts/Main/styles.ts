@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Style } from "./types";
+import { IStyle } from "./types";
 
-const styles = StyleSheet.create<Style>({
+const styles = StyleSheet.create<IStyle>({
   container: {
     flex: 1,
   },
