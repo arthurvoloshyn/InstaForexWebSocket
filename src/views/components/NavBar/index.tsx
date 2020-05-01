@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { View } from 'react-native';
-import { Props } from './types';
 import AppText from '../AppText';
+import { Props } from './types';
 import styles from './styles';
 
 const NavBar: FC<Props> = ({ title }) => (

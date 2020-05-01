@@ -20,7 +20,7 @@ const styles = StyleSheet.create<Style>({
         }),
     },
     text: {
-        color: OS.isIOS ? Themes.primaryColor : '#fff',
+        color: OS.isIOS ? Themes.primaryColor : Themes.lightColor,
         fontSize: 20,
     },
 });
