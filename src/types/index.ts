@@ -21,9 +21,9 @@ export type IContextValue = {
 };
 
 export type IReducerState = {
-  data: IQuotaMap,
-  isLoading: boolean,
-  isError: boolean,
+  readonly data: IQuotaMap,
+  readonly isLoading: boolean,
+  readonly isError: boolean,
 };
 
 export type IFetchQuotes = [IReducerState, (() => () => void)];
