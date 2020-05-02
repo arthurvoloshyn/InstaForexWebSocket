@@ -1,3 +1,5 @@
+import actionTypes from "../constants/actionTypes";
+
 export type IQuota = {
   ask: number,
   bid: number,
@@ -25,3 +27,8 @@ export type IReducerState = {
 };
 
 export type IFetchQuotes = [IReducerState, (() => () => void)];
+
+export type IAction = {
+  type: actionTypes,
+  data?: IQuota,
+};

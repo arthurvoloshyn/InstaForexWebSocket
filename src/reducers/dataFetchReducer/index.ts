@@ -1,5 +1,5 @@
 import actionTypes from '../../constants/actionTypes';
-import { IReducerState } from '../../types';
+import { IReducerState, IAction } from '../../types';
 
 export const initState: IReducerState = {
   isLoading: false,
@@ -7,7 +7,7 @@ export const initState: IReducerState = {
   data: {},
 };
 
-const dataFetchReducer = (state = initState, { type, data }) => {
+const dataFetchReducer = (state = initState, { type, data }: IAction): IReducerState => {
   switch (type) {
     case actionTypes.FETCH_INIT:
       return {
@@ -20,9 +20,10 @@ const dataFetchReducer = (state = initState, { type, data }) => {
         ...state,
         isLoading: false,
         isError: false,
+        // @ts-ignore
         data: {
           ...state.data,
-          [data.symbol]: data
+          [data!.symbol]: data
         },
       };
     case actionTypes.FETCH_FAILURE:

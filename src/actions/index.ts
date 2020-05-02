@@ -1,6 +1,5 @@
 import actionTypes from '../constants/actionTypes';
-import { IQuota } from "../types";
-import { IAction } from './types';
+import { IQuota, IAction } from '../types';
 
 export const fetchInit = (): IAction => ({ type: actionTypes.FETCH_INIT });
 export const fetchSuccess = (data: IQuota): IAction => ({ type: actionTypes.FETCH_SUCCESS, data });
