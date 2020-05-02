@@ -1,9 +1,9 @@
 import { ImageSourcePropType } from "react-native";
 import { FontSource } from "expo-font";
 
-type IFile = {
+type IFiles = {
     fonts: { [name: string]: FontSource },
     images: { [name: string]: ImageSourcePropType },
 };
 
-export default IFile;
+export default IFiles;

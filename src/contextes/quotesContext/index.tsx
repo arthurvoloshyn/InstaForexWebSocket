@@ -3,7 +3,7 @@ import {sortBySymbol} from "../../utils";
 import { initState } from '../../reducers/dataFetchReducer';
 import useFetchQuotes from '../../hooks/useFetchQuotes';
 import {IQuota, IContextValue, IFetchQuotes} from "../../types";
-import { Props } from './types';
+import { IProps } from './types';
 
 const initContextValue: IContextValue = {
   ...initState,
@@ -13,7 +13,7 @@ const initContextValue: IContextValue = {
 
 const QuotesContext = createContext<IContextValue>(initContextValue);
 
-const QuotesProvider: FC<Props> = ({ children }) => {
+const QuotesProvider: FC<IProps> = ({ children }) => {
   const [{ data: quotes, isLoading, isError }, fetchData]: IFetchQuotes = useFetchQuotes();
   const data: IQuota[] = sortBySymbol(quotes);
 
