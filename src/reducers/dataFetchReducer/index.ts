@@ -20,7 +20,7 @@ const dataFetchReducer = (state = initState, { type, data }: IAction): IReducerS
         ...state,
         isLoading: false,
         isError: false,
-        // @ts-ignore
+        // @ts-ignore: TS2322
         data: {
           ...state.data,
           [data!.symbol]: data

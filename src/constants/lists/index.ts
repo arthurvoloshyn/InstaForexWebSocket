@@ -1,9 +1,9 @@
-export const quoteSymbols = [
-    'GOLD',
-    'EURUSD',
-    'GBPUSD',
-    'USDJPY',
-    'USDCHF',
-    'USDCAD',
-    'AUDUSD',
-];
+export enum quoteSymbols {
+    GOLD,
+    EURUSD,
+    GBPUSD,
+    USDJPY,
+    USDCHF,
+    USDCAD,
+    AUDUSD,
+}
