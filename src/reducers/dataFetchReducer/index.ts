@@ -7,8 +7,8 @@ export const initState: IReducerState = {
   data: {},
 };
 
-const dataFetchReducer = (state = initState, { type, data }: IAction): IReducerState => {
-  switch (type) {
+const dataFetchReducer = (state = initState, action: IAction): IReducerState => {
+  switch (action.type) {
     case actionTypes.FETCH_INIT:
       return {
         ...state,
@@ -20,10 +20,9 @@ const dataFetchReducer = (state = initState, { type, data }: IAction): IReducerS
         ...state,
         isLoading: false,
         isError: false,
-        // @ts-ignore: TS2322
         data: {
           ...state.data,
-          [data!.symbol]: data
+          [action.data.symbol]: action.data
         },
       };
     case actionTypes.FETCH_FAILURE:

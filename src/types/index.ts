@@ -1,4 +1,4 @@
-import actionTypes from "../constants/actionTypes";
+import { IFetchFailure, IFetchInit, IFetchSuccess } from "../actions/types";
 
 export type IQuota = {
   ask: number,
@@ -28,7 +28,4 @@ export type IReducerState = {
 
 export type IFetchQuotes = [IReducerState, (() => () => void)];
 
-export type IAction = {
-  type: actionTypes,
-  data?: IQuota,
-};
+export type IAction = IFetchInit | IFetchFailure | IFetchSuccess;

@@ -24,7 +24,7 @@ const useFetchQuotes = () => {
             });
 
             client.on('quotes', (data: IData) => {
-                const { msg = {} }: IQuota = data;
+                const { msg = {} }: IData = data;
 
                 dispatch(fetchSuccess(msg));
             });
