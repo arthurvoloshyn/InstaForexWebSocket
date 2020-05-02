@@ -2,7 +2,6 @@ import {ReactNode} from "react";
 import {TextStyle, ViewStyle} from "react-native";
 
 export type IProps = {
-    children: ReactNode,
     onPress?: () => void,
     backgroundColor?: string,
     activeOpacity?: number,

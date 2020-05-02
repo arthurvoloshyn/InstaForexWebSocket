@@ -31,7 +31,7 @@ const Quotes: FC = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <QuotesList quotes={data} />
+      <QuotesList quotes={data} onRefresh={fetchData} refreshing={isLoading} />
     </SafeAreaView>
   );
 };
