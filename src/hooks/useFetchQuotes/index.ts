@@ -1,6 +1,6 @@
 import {useEffect, useCallback, useReducer} from 'react';
 import io from "socket.io-client";
-import { BASE_PATH } from '../../constants/paths';
+import Paths from '../../constants/paths';
 import { quoteSymbols } from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
@@ -10,7 +10,7 @@ const useFetchQuotes = () => {
     const [state, dispatch] = useReducer(dataFetchReducer, initState);
 
     const fetchData = useCallback(() => {
-        const client = io(BASE_PATH);
+        const client = io(Paths.basePath);
 
         dispatch(fetchInit());
 

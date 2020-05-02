@@ -1,5 +1,5 @@
-import {ImageSourcePropType} from "react-native";
-import {FontSource} from "expo-font";
+import { ImageSourcePropType } from "react-native";
+import { FontSource } from "expo-font";
 
 type File = {
     fonts: {[name: string]: FontSource},
