@@ -4,11 +4,11 @@ import Paths from '../../constants/paths';
 import { quoteSymbols } from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
-import { IData } from "../../types";
-import { IReducer, ISocket } from './types';
+import { IData, IFetchQuotes } from "../../types";
+import { IReducer, ISocket, IReducerValue } from './types';
 
 const useFetchQuotes = () => {
-    const [state, dispatch] = useReducer<IReducer>(dataFetchReducer, initState);
+    const [state, dispatch]: IReducerValue = useReducer<IReducer>(dataFetchReducer, initState);
 
     const fetchData = useCallback(() => {
         const client: ISocket = io(Paths.basePath);
@@ -42,7 +42,7 @@ const useFetchQuotes = () => {
         fetchData();
     }, [fetchData]);
 
-    return [state, fetchData];
+    return [state, fetchData] as IFetchQuotes;
 };
 
 export default useFetchQuotes;
