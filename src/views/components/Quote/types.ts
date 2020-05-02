@@ -1,8 +1,8 @@
 import { ViewStyle, TextStyle, Animated } from "react-native";
-import {IQuota} from "../../../types";
+import {IQuote} from "../../../types";
 
 export type IProps = {
-    quota: IQuota,
+    quota: IQuote,
 };
 
 export type IStyle = {

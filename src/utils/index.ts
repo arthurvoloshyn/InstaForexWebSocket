@@ -1,7 +1,7 @@
-import {IQuota, IQuotaMap} from "../types";
+import {IQuote, IQuoteMap} from "../types";
 
-export const sortBySymbol = (data: IQuotaMap): IQuota[] => {
-    const dataValues: IQuota[] = Object.values(data);
+export const sortBySymbol = (data: IQuoteMap): IQuote[] => {
+    const dataValues: IQuote[] = Object.values(data);
 
-    return dataValues.sort((a: IQuota, b: IQuota): number => a.symbol.localeCompare(b.symbol));
+    return dataValues.sort((a: IQuote, b: IQuote): number => a.symbol.localeCompare(b.symbol));
 };

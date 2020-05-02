@@ -1,6 +1,6 @@
 import { IFetchFailure, IFetchInit, IFetchSuccess } from "../actions/types";
 
-export type IQuota = {
+export type IQuote = {
   ask: number,
   bid: number,
   change: number,
@@ -9,19 +9,19 @@ export type IQuota = {
   symbol: string,
 };
 
-export type IQuotaMap = { [key: string]: IQuota };
+export type IQuoteMap = { [key: string]: IQuote };
 
-export type IData = { msg: IQuota };
+export type IData = { msg: IQuote };
 
 export type IContextValue = {
   fetchData: () => void,
   isLoading: boolean,
   isError: boolean,
-  data: IQuota[],
+  data: IQuote[],
 };
 
 export type IReducerState = {
-  readonly data: IQuotaMap,
+  readonly data: IQuoteMap,
   readonly isLoading: boolean,
   readonly isError: boolean,
 };
