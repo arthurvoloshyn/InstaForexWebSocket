@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 import Themes from '../../../constants/themes';
-import { Style } from './types';
+import { IStyle } from './types';
 
-const styles = StyleSheet.create<Style>({
+const styles = StyleSheet.create<IStyle>({
   button: {
     alignItems: 'center',
     borderRadius: 5,

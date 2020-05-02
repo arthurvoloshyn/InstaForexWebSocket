@@ -1,14 +1,18 @@
 import {ReactNode} from "react";
 import {TextStyle, ViewStyle} from "react-native";
 
-export type Props = {
+export type IProps = {
     children: ReactNode,
     onPress?: () => void,
     backgroundColor?: string,
     activeOpacity?: number,
 };
 
-export type Style = {
+export type IStyle = {
     button: ViewStyle,
     text: TextStyle,
+};
+
+export type IButtonStyle = {
+    backgroundColor: string,
 };

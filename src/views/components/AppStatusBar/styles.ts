@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
-import { Style } from './types';
+import { IStyle } from './types';
 
-const styles = StyleSheet.create<Style>({
+const styles = StyleSheet.create<IStyle>({
   statusBar: {
     height: Constants.statusBarHeight,
   },

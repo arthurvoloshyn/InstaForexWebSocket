@@ -1,13 +1,13 @@
 import React, { Component, ReactNode } from 'react';
 import ErrorIndicator from '../ErrorIndicator';
-import { Props, State, Error } from './types';
+import { IProps, IState, IError } from './types';
 
-class ErrorBoundary extends Component<Props, State> {
+class ErrorBoundary extends Component<IProps, IState> {
   state = {
     hasError: false,
   };
 
-  static getDerivedStateFromError(): Error {
+  static getDerivedStateFromError(): IError {
     return { hasError: true };
   }
 

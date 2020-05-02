@@ -1,11 +1,11 @@
-import React, {FC} from 'react';
-import {StatusBar, View} from 'react-native';
+import React, { FC } from 'react';
+import { StatusBar, View } from 'react-native';
 import Themes from '../../../constants/themes';
-import { Props } from './types';
+import { IProps, IStatusBarStyle } from './types';
 import styles from './styles';
 
-const AppStatusBar: FC<Props> = ({ backgroundColor, translucent, ...attrs }) => {
-  const statusBarStyles = { backgroundColor };
+const AppStatusBar: FC<IProps> = ({ backgroundColor, translucent, ...attrs }) => {
+  const statusBarStyles: IStatusBarStyle = { backgroundColor };
 
   return (
     <View style={[styles.statusBar, statusBarStyles]}>

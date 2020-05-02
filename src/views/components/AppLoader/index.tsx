@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import { View, ActivityIndicator, ActivityIndicatorProps } from 'react-native';
 import Themes from '../../../constants/themes';
 import styles from './styles';

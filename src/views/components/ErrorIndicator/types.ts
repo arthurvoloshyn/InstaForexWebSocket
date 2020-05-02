@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
-import {TextStyle, ViewStyle} from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 
-export type Props = {
+export type IProps = {
     children?: ReactNode,
 };
 
-export type Style = {
+export type IStyle = {
     error: ViewStyle,
     text: TextStyle,
 };

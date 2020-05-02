@@ -1,11 +1,15 @@
-import {StatusBarStyle, ViewStyle} from "react-native";
+import { StatusBarStyle, ViewStyle } from "react-native";
 
-export type Props = {
+export type IProps = {
     backgroundColor?: string,
     translucent?: boolean,
     barStyle?: StatusBarStyle,
 };
 
-export type Style = {
+export type IStyle = {
     statusBar: ViewStyle,
+};
+
+export type IStatusBarStyle = {
+    backgroundColor: string,
 };

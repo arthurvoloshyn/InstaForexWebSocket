@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Text } from 'react-native';
-import { Props } from './types';
+import { IProps, ITextStyle } from './types';
 
-const AppText: FC<Props> = ({ style, children, bold, ...attrs }) => {
-  const textStyles = { fontFamily: bold ? 'roboto-bold' : 'roboto-regular' };
+const AppText: FC<IProps> = ({ style, children, bold, ...attrs }) => {
+  const textStyles: ITextStyle = { fontFamily: bold ? 'roboto-bold' : 'roboto-regular' };
 
   return (
     <Text style={[textStyles, style]} {...attrs}>
