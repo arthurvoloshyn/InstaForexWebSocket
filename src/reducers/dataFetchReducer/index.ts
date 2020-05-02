@@ -7,7 +7,7 @@ export const initState: IReducerState = {
   data: {},
 };
 
-const dataFetchReducer = (state = initState, action: IAction): IReducerState => {
+const dataFetchReducer = (state: IReducerState = initState, action: IAction): IReducerState => {
   switch (action.type) {
     case actionTypes.FETCH_INIT:
       return {

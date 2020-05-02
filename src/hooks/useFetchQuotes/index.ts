@@ -1,16 +1,17 @@
-import {useEffect, useCallback, useReducer} from 'react';
+import { useEffect, useCallback, useReducer } from 'react';
 import io from "socket.io-client";
 import Paths from '../../constants/paths';
 import { quoteSymbols } from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
-import {IData, IQuota} from "../../types";
+import { IData } from "../../types";
+import { IReducer, ISocket } from './types';
 
 const useFetchQuotes = () => {
-    const [state, dispatch] = useReducer(dataFetchReducer, initState);
+    const [state, dispatch] = useReducer<IReducer>(dataFetchReducer, initState);
 
     const fetchData = useCallback(() => {
-        const client = io(Paths.basePath);
+        const client: ISocket = io(Paths.basePath);
 
         dispatch(fetchInit());
 
