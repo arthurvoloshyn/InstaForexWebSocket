@@ -24,11 +24,9 @@ export default StyleSheet.create<IStyle>({
   },
   symbol: {
     fontSize: Layout.isSmallDevice ? 14 : 18,
-    fontWeight: 'bold',
   },
   infoText: {
     fontSize: Layout.isSmallDevice ? 14 : 15,
-    fontWeight: '500',
     textAlign: 'right',
   },
   icon: {

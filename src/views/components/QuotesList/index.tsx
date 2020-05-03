@@ -5,7 +5,7 @@ import Quote from '../Quote';
 import { IProps, IRenderItem, IKeyExtractor, IRenderEmpty } from './types';
 
 const QuotesList: FC<IProps> = ({ quotes, onRefresh, refreshing }) => {
-  const renderItem: IRenderItem = useCallback(({ item }) => <Quote quota={item} />, []);
+  const renderItem: IRenderItem = useCallback(({ item }) => <Quote quote={item} />, []);
   const keyExtractor: IKeyExtractor = useCallback(({ symbol }) => symbol, []);
   const renderEmpty: IRenderEmpty = useCallback(() => <EmptyPage />, []);
 

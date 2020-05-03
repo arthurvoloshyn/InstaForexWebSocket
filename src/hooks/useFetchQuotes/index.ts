@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useReducer } from 'react';
 import io from "socket.io-client";
 import Paths from '../../constants/paths';
-import { quoteSymbols } from '../../constants/lists';
+import Lists from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
 import { IData, IFetchQuotes } from "../../types";
@@ -17,11 +17,11 @@ const useFetchQuotes = () => {
 
         try {
             client.on('connect', () => {
-                client.emit('subscribe', quoteSymbols);
+                client.emit('subscribe', Lists.quoteSymbols);
             });
 
             client.on('disconnect', () => {
-                client.emit('unsubscribe', quoteSymbols);
+                client.emit('unsubscribe', Lists.quoteSymbols);
             });
 
             client.on('quotes', (data: IData) => {

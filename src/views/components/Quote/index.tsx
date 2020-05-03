@@ -1,11 +1,14 @@
 import React, {FC, useEffect, useState, memo} from 'react';
 import {View, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Lists from "../../../constants/lists";
+import { getDataListWithValues } from '../../../utils';
 import AppText from "../AppText";
+import { IDataList, IDataListItem } from "../../../utils/types";
 import { IProps, IAnimatedStyle } from './types';
 import styles from './styles';
 
-const Quote: FC<IProps> = ({ quota }) => {
+const Quote: FC<IProps> = ({ quote }) => {
     const value = new Animated.Value(0);
     const [animatedValue, setAnimatedValue] = useState(value);
 
@@ -17,13 +20,13 @@ const Quote: FC<IProps> = ({ quota }) => {
     }).start(() => {
       setAnimatedValue(value);
     });
-  }, [quota.change]);
+  }, [quote.change]);
 
   const interpolateColor = animatedValue.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [
       'transparent',
-      quota.change > 0 ? '#008000' : '#8e2b2b',
+        quote.change > 0 ? '#008000' : '#8e2b2b',
       'transparent',
     ],
   });
@@ -31,32 +34,25 @@ const Quote: FC<IProps> = ({ quota }) => {
   const animatedStyle: IAnimatedStyle = {
     backgroundColor: interpolateColor
   };
-  const isNegative: boolean = quota.change < 0;
+  const isNegative: boolean = quote.change < 0;
+  const quotesList: IDataList = getDataListWithValues(Lists.quoteList, quote);
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-        <View style={styles.textContainer}>
-            <AppText style={styles.symbol}>{quota.symbol}</AppText>
-        </View>
+        {quotesList.map(({ title, value }: IDataListItem) => {
+            const isSymbol = title === 'Symbol';
+            const isChange = title === 'Change';
 
-        <View style={styles.textContainer}>
-            <AppText style={styles.infoText}>{quota.ask}</AppText>
-        </View>
+            const baseStyles = isSymbol ? styles.symbol : styles.infoText;
+            const changeStyles = isChange && { color: isNegative ? '#8e2b2b' : '#008000' };
+            const textValue = isChange && !isNegative ? `+${value}` : value;
 
-        <View style={styles.textContainer}>
-            <AppText style={styles.infoText}>{quota.bid}</AppText>
-        </View>
-
-        <View style={styles.textContainer}>
-          <AppText
-              style={[
-                styles.infoText,
-                // eslint-disable-next-line react-native/no-inline-styles
-                {color: isNegative ? '#8e2b2b' : '#008000'},
-              ]}>
-            {isNegative ? quota.change : `+${quota.change}`}
-          </AppText>
-        </View>
+            return (
+                <View key={title} style={styles.textContainer}>
+                    <AppText style={[baseStyles, changeStyles]} bold={isSymbol}>{textValue}</AppText>
+                </View>
+            )
+        })}
 
         <View style={styles.changeFieldContainer}>
           <Icon

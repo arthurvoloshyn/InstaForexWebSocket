@@ -1,31 +1,7 @@
-import { IFetchFailure, IFetchInit, IFetchSuccess } from "../actions/types";
+import { IAction } from './action';
+import { IContextValue } from './context';
+import { IReducerState } from './reducer';
+import { IFetchQuotes } from './hook';
+import { IQuote, IData, IQuoteMap } from './quotes';
 
-export type IQuote = {
-  ask: number,
-  bid: number,
-  change: number,
-  digits: number,
-  lasttime: number,
-  symbol: string,
-};
-
-export type IQuoteMap = { [key: string]: IQuote };
-
-export type IData = { msg: IQuote };
-
-export type IContextValue = {
-  fetchData: () => void,
-  isLoading: boolean,
-  isError: boolean,
-  data: IQuote[],
-};
-
-export type IReducerState = {
-  readonly data: IQuoteMap,
-  readonly isLoading: boolean,
-  readonly isError: boolean,
-};
-
-export type IFetchQuotes = [IReducerState, (() => () => void)];
-
-export type IAction = IFetchInit | IFetchFailure | IFetchSuccess;
+export { IAction, IQuoteMap, IData, IContextValue, IFetchQuotes, IQuote, IReducerState };
