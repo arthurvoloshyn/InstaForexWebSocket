@@ -1,7 +1,7 @@
-import { Dimensions, ScaledSize } from 'react-native';
-import { ILayout } from './types';
+import { Dimensions } from 'react-native';
+import ILayout from './types';
 
-const { width, height }: ScaledSize = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 const smallDeviceWidth: number = 375;
 
 const Layout: ILayout = {

@@ -1,8 +1,11 @@
 import { IQuote } from "../quote";
+import { IFetchData } from "../hook";
 
-export type IContextValue = {
-    fetchData: () => void,
+type IContextValue = {
+    fetchData: () => IFetchData,
     isLoading: boolean,
     isError: boolean,
     data: IQuote[],
 };
+
+export default IContextValue;

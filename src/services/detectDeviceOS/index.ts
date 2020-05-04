@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { IDetectDeviceOS } from './types';
+import IDetectDeviceOS from './types';
 
 const OS: IDetectDeviceOS = {
     isAndroid: Platform.OS === 'android',

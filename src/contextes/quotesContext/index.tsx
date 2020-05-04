@@ -8,7 +8,7 @@ import { IProps } from './types';
 const initContextValue: IContextValue = {
   ...initState,
   data: [],
-  fetchData: () => {},
+  fetchData: () => () => {},
 };
 
 const QuotesContext = createContext<IContextValue>(initContextValue);

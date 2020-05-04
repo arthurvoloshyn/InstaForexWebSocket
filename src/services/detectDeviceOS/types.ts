@@ -1,3 +1,5 @@
-export type IDetectDeviceOS = {
+type IDetectDeviceOS = {
     [name: string]: boolean,
 };
+
+export default IDetectDeviceOS;
