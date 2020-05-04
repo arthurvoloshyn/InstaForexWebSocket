@@ -1,15 +1,10 @@
 import actionTypes from "../constants/actionTypes";
 import { IQuote } from "../types";
 
-export type IFetchInit = {
-    type: actionTypes.FETCH_INIT,
-}
+type IAction<K, V = void> = V extends void ? { type: K } : { type: K } & V;
 
-export type IFetchFailure = {
-    type: actionTypes.FETCH_FAILURE,
-}
+export type IFetchInit = IAction<actionTypes.FETCH_INIT>;
 
-export type IFetchSuccess = {
-    type: actionTypes.FETCH_SUCCESS,
-    data: IQuote,
-}
+export type IFetchFailure = IAction<actionTypes.FETCH_FAILURE>;
+
+export type IFetchSuccess = IAction<actionTypes.FETCH_SUCCESS, { data: IQuote }>;

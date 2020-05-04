@@ -1,6 +1,6 @@
 import { IQuote, IQuoteMap } from "../types";
-import { IQuoteList } from '../constants/lists/types';
-import { IDataList } from './types';
+import { IQuotesListItem } from '../constants/lists/types';
+import { IDataListItem } from './types';
 import Lists from "../constants/lists";
 
 export const sortBySymbol = (data: IQuoteMap): IQuote[] => {
@@ -9,7 +9,7 @@ export const sortBySymbol = (data: IQuoteMap): IQuote[] => {
     return dataValues.sort((a: IQuote, b: IQuote): number => a.symbol.localeCompare(b.symbol));
 };
 
-export const getDataListWithValues = (list: IQuoteList = Lists.quoteList, data: IQuote): IDataList => {
+export const getDataListWithValues = (list: IQuotesListItem[] = Lists.quoteList, data: IQuote): IDataListItem[] => {
     if (!data) return list;
 
     const { symbol, ask, bid, change } = data;

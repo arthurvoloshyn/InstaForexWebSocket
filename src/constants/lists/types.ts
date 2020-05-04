@@ -1,8 +1,8 @@
-export type ITitle = 'Symbol' | 'Ask' | 'Bid' | 'Change';
+type ITitle = 'Symbol' | 'Ask' | 'Bid' | 'Change';
 
-export type IQuoteList = { title: ITitle }[];
+export interface IQuotesListItem { title: ITitle }
 
 export type ILists = {
     quoteSymbols: string[],
-    quoteList: IQuoteList,
+    quoteList: IQuotesListItem[],
 };

@@ -1,10 +1,10 @@
-import React, {FC, useEffect, useState, memo} from 'react';
+import React, {useEffect, useState, memo, FC, ReactNode} from 'react';
 import {View, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Lists from "../../../constants/lists";
 import { getDataListWithValues } from '../../../utils';
 import AppText from "../AppText";
-import { IDataList, IDataListItem } from "../../../utils/types";
+import { IDataListItem } from "../../../utils/types";
 import { IProps, IAnimatedStyle } from './types';
 import styles from './styles';
 
@@ -35,11 +35,11 @@ const Quote: FC<IProps> = ({ quote }) => {
     backgroundColor: interpolateColor
   };
   const isNegative: boolean = quote.change < 0;
-  const quotesList: IDataList = getDataListWithValues(Lists.quoteList, quote);
+  const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-        {quotesList.map(({ title, value }: IDataListItem) => {
+        {quotesList.map(({ title, value }: IDataListItem): ReactNode => {
             const isSymbol = title === 'Symbol';
             const isChange = title === 'Change';
 
