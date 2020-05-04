@@ -1,4 +1,4 @@
-import { IQuote } from "../quotes";
+import { IQuote } from "../quote";
 
 export type IContextValue = {
     fetchData: () => void,

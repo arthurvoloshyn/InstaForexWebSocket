@@ -1,4 +1,4 @@
-import { IQuoteMap } from "../quotes";
+import { IQuoteMap } from "../quote";
 
 export type IReducerState = {
     readonly data: IQuoteMap,
