@@ -4,13 +4,13 @@ import Paths from '../../constants/paths';
 import Lists from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchFailure, fetchInit, fetchSuccess } from '../../actions';
-import { IData, IFetchQuotes, IReturnFetchData } from "../../types";
+import { IData, IFetchQuotes, IFetchData } from "../../types";
 import { IReducer } from './types';
 
 const useFetchQuotes = (): IFetchQuotes => {
     const [state, dispatch] = useReducer<IReducer>(dataFetchReducer, initState);
 
-    const fetchData = useCallback((): IReturnFetchData => {
+    const fetchData = useCallback((): IFetchData => {
         const client = io(Paths.basePath);
 
         dispatch(fetchInit());
@@ -33,7 +33,7 @@ const useFetchQuotes = (): IFetchQuotes => {
             dispatch(fetchFailure());
         }
 
-        return (): void => {
+        return () => {
             client.close();
         };
     }, []);
