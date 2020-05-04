@@ -1,3 +1,5 @@
-export type IPaths = {
+type IPaths = {
     [key: string]: string,
 };
+
+export default IPaths;

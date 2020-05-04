@@ -1,3 +1,5 @@
 import { IReducerState } from "../reducer";
 
-export type IFetchQuotes = [IReducerState, (() => () => void)];
+export type IReturnFetchData = () => void;
+
+export type IFetchQuotes = [IReducerState, (() => IReturnFetchData)];

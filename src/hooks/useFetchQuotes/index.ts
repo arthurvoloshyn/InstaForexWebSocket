@@ -1,17 +1,17 @@
-import { useEffect, useCallback, useReducer } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 import io from "socket.io-client";
 import Paths from '../../constants/paths';
 import Lists from '../../constants/lists';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
-import { fetchSuccess, fetchInit, fetchFailure } from '../../actions';
-import { IData, IFetchQuotes } from "../../types";
-import { IReducer, ISocket, IReducerValue } from './types';
+import { fetchFailure, fetchInit, fetchSuccess } from '../../actions';
+import { IData, IFetchQuotes, IReturnFetchData } from "../../types";
+import { IReducer } from './types';
 
-const useFetchQuotes = () => {
-    const [state, dispatch]: IReducerValue = useReducer<IReducer>(dataFetchReducer, initState);
+const useFetchQuotes = (): IFetchQuotes => {
+    const [state, dispatch] = useReducer<IReducer>(dataFetchReducer, initState);
 
-    const fetchData = useCallback(() => {
-        const client: ISocket = io(Paths.basePath);
+    const fetchData = useCallback((): IReturnFetchData => {
+        const client = io(Paths.basePath);
 
         dispatch(fetchInit());
 
@@ -33,7 +33,7 @@ const useFetchQuotes = () => {
             dispatch(fetchFailure());
         }
 
-        return () => {
+        return (): void => {
             client.close();
         };
     }, []);
@@ -42,7 +42,7 @@ const useFetchQuotes = () => {
         fetchData();
     }, [fetchData]);
 
-    return [state, fetchData] as IFetchQuotes;
+    return [state, fetchData];
 };
 
 export default useFetchQuotes;
