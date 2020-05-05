@@ -6,7 +6,13 @@ import AppText from '../AppText';
 import { IProps, IButtonStyle } from './types';
 import styles from './styles';
 
-const AppButton: FC<IProps> = ({ children, onPress, backgroundColor, activeOpacity, ...attrs }) => {
+const AppButton: FC<IProps> = ({
+    children,
+    activeOpacity = 0.7,
+    backgroundColor = Themes.primaryColor,
+    onPress = () => {},
+    ...attrs
+}) => {
   const Wrapper: ElementType = OS.isAndroid ? TouchableNativeFeedback : TouchableOpacity;
   const buttonStyles: IButtonStyle = { backgroundColor };
 
@@ -19,12 +25,6 @@ const AppButton: FC<IProps> = ({ children, onPress, backgroundColor, activeOpaci
       </View>
     </Wrapper>
   );
-};
-
-AppButton.defaultProps = {
-  onPress: () => {},
-  backgroundColor: Themes.primaryColor,
-  activeOpacity: 0.7,
 };
 
 export default AppButton;

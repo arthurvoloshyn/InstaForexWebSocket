@@ -1,11 +1,10 @@
-import {ReactNode} from "react";
-import {TextStyle, ViewStyle} from "react-native";
+import { ReactNode } from "react";
+import { TextStyle, ViewStyle, TouchableNativeFeedbackProps, TouchableOpacityProps } from "react-native";
 
-export type IProps = {
-    onPress?: () => void,
+export interface IProps extends TouchableNativeFeedbackProps, TouchableOpacityProps {
+    children: ReactNode,
     backgroundColor?: string,
-    activeOpacity?: number,
-};
+}
 
 export type IStyle = {
     button: ViewStyle,
