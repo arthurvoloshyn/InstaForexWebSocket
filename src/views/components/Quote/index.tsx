@@ -42,8 +42,9 @@ const Quote: FC<IProps> = ({ quote }) => {
             const isChange: boolean = title === 'Change';
 
             const baseStyles = isSymbol ? styles.symbol : styles.infoText;
+            const isPositiveNumber: boolean = isNumber(value) && !isNegative;
             const changeStyles: IChangeStyles = isChange ? { color: isNegative ? '#8e2b2b' : '#008000' } : {};
-            const textValue: ITextValue = isChange && !isNegative && isNumber(value) ? `+${value}` : value;
+            const textValue: ITextValue = isChange && isPositiveNumber ? `+${value}` : value;
 
             return (
                 <View key={title} style={styles.textContainer}>
