@@ -3,9 +3,11 @@ import { View, Image } from 'react-native';
 import Files from '../../../constants/files';
 import styles from './styles';
 
+const { noItems } = Files.images;
+
 const EmptyPage: FC = () => (
   <View style={styles.wrapper}>
-    <Image style={styles.image} source={Files.images.noItems} />
+    <Image style={styles.image} source={noItems} />
   </View>
 );
 
