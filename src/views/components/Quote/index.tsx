@@ -1,9 +1,9 @@
-import React, { useEffect, useState, memo, FC, ReactNode } from 'react';
+import React, { useEffect, useState, memo, FC } from 'react';
 import { View, Animated } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Lists from "../../../constants/lists";
 import { getDataListWithValues } from '../../../utils';
-import { IDataListItem } from "../../../utils/types";
+import { IDataListItem } from "../../../types";
 import Row from '../Row';
 import { IProps } from './types';
 import styles from './styles';

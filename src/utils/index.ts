@@ -1,7 +1,6 @@
 import { IQuotesListItem } from '../constants/lists/types';
-import Lists from "../constants/lists";
-import { IQuote, IQuoteMap } from "../types";
-import { IDataListItem } from './types';
+import Lists from '../constants/lists';
+import { IQuote, IQuoteMap, IDataListItem } from '../types';
 
 export const sortBySymbol = (data: IQuoteMap): IQuote[] => {
     const dataValues: IQuote[] = Object.values(data);
