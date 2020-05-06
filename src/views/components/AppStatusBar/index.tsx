@@ -4,7 +4,11 @@ import Themes from '../../../constants/themes';
 import { IProps, IStatusBarStyle } from './types';
 import styles from './styles';
 
-const AppStatusBar: FC<IProps> = ({ backgroundColor, translucent, ...attrs }) => {
+const AppStatusBar: FC<IProps> = ({
+  backgroundColor = Themes.primaryColor,
+  translucent = true,
+  ...attrs
+}) => {
   const statusBarStyles: IStatusBarStyle = { backgroundColor };
 
   return (
@@ -12,11 +16,6 @@ const AppStatusBar: FC<IProps> = ({ backgroundColor, translucent, ...attrs }) =>
       <StatusBar translucent={translucent} backgroundColor={backgroundColor} {...attrs} />
     </View>
   );
-};
-
-AppStatusBar.defaultProps = {
-  backgroundColor: Themes.primaryColor,
-  translucent: true,
 };
 
 export default AppStatusBar;
