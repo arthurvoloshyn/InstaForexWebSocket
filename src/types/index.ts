@@ -6,4 +6,15 @@ import { IQuotesListItem } from './lists';
 import { IFetchQuotes, IFetchData } from './hook';
 import { IQuote, IData, IQuoteMap } from './quote';
 
-export { IAction, IContextValue, IReducerState, IDataListItem, IQuotesListItem, IFetchQuotes, IFetchData, IQuote, IData, IQuoteMap };
+export {
+    IAction,
+    IContextValue,
+    IReducerState,
+    IDataListItem,
+    IQuotesListItem,
+    IFetchQuotes,
+    IFetchData,
+    IQuote,
+    IData,
+    IQuoteMap
+};
