@@ -7,7 +7,3 @@ export type IProps = {
 export type IState = {
     hasError: boolean,
 };
-
-export type IError = {
-    hasError: boolean,
-};
