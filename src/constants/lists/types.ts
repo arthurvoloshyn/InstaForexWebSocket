@@ -1,8 +1,4 @@
-type ITitle = 'Symbol' | 'Ask' | 'Bid' | 'Change';
-
-export interface IQuotesListItem {
-    title: ITitle;
-}
+import { IQuotesListItem } from '../../types';
 
 export type ILists = {
     quoteSymbols: string[],

@@ -1,4 +1,4 @@
-import { IQuotesListItem } from "../../constants/lists/types";
+import { IQuotesListItem } from '../lists';
 
 type IValue = string | number;
 
