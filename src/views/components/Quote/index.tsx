@@ -2,10 +2,10 @@ import React, { useEffect, useState, memo, FC, ReactNode } from 'react';
 import { View, Animated } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Lists from "../../../constants/lists";
-import { getDataListWithValues, isNumber } from '../../../utils';
-import AppText from "../AppText";
+import { getDataListWithValues } from '../../../utils';
 import { IDataListItem } from "../../../utils/types";
-import { IProps, IChangeStyles, ITextValue } from './types';
+import Row from '../Row';
+import { IProps } from './types';
 import styles from './styles';
 
 const Quote: FC<IProps> = ({ quote }) => {
@@ -37,21 +37,9 @@ const Quote: FC<IProps> = ({ quote }) => {
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-        {quotesList.map(({ title, value = 'unknown' }: IDataListItem): ReactNode => {
-            const isSymbol: boolean = title === 'Symbol';
-            const isChange: boolean = title === 'Change';
-
-            const baseStyles = isSymbol ? styles.symbol : styles.infoText;
-            const isPositiveNumber: boolean = isNumber(value) && !isNegative;
-            const changeStyles: IChangeStyles = isChange ? { color: isNegative ? '#8e2b2b' : '#008000' } : {};
-            const textValue: ITextValue = isChange && isPositiveNumber ? `+${value}` : value;
-
-            return (
-                <View key={title} style={styles.textContainer}>
-                    <AppText style={[baseStyles, changeStyles]} bold={isSymbol}>{textValue}</AppText>
-                </View>
-            )
-        })}
+        {quotesList.map(({ title, value }: IDataListItem) => (
+            <Row key={title} title={title} value={value} isNegative={isNegative} />
+        ))}
 
         <View style={styles.changeFieldContainer}>
           <Icon

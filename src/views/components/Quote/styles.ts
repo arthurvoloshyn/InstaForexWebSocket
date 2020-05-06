@@ -1,5 +1,4 @@
-import {StyleSheet} from 'react-native';
-import Layout from '../../../services/getDeviceLayout';
+import { StyleSheet } from 'react-native';
 import { IStyle } from './types';
 
 export default StyleSheet.create<IStyle>({
@@ -13,21 +12,10 @@ export default StyleSheet.create<IStyle>({
     borderBottomWidth: 1,
     borderBottomColor: 'gray',
   },
-  textContainer: {
-    flex: 1,
-    marginRight: 6,
-  },
   changeFieldContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
-  },
-  symbol: {
-    fontSize: Layout.isSmallDevice ? 14 : 18,
-  },
-  infoText: {
-    fontSize: Layout.isSmallDevice ? 14 : 15,
-    textAlign: 'right',
   },
   icon: {
     marginLeft: 4,

@@ -7,10 +7,7 @@ export type IProps = {
 
 export type IStyle = {
     container: ViewStyle,
-    textContainer: TextStyle,
     changeFieldContainer: ViewStyle,
-    symbol: TextStyle,
-    infoText: TextStyle,
     icon: ViewStyle | TextStyle,
 };
 
