@@ -1,5 +1,3 @@
-import { ReactElement } from "react";
-import { ListRenderItem } from "react-native";
 import { IQuote } from "../../../types";
 
 export type IProps = {
@@ -8,8 +6,4 @@ export type IProps = {
     refreshing: boolean,
 };
 
-export type IRenderItem = ListRenderItem<IQuote>;
-
-export type IKeyExtractor = (item: IQuote, index: number) => string;
-
-export type IRenderEmpty = () => ReactElement;
+export type IRenderItem = { item: IQuote };
