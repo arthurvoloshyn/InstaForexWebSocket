@@ -4,8 +4,8 @@ import { IProps, ITextStyle } from './types';
 
 const AppText: FC<IProps> = ({
   children,
-  bold = false,
-  style = {},
+  bold,
+  style,
   ...attrs
 }) => {
   const textStyles: ITextStyle = { fontFamily: bold ? 'roboto-bold' : 'roboto-regular' };

@@ -8,9 +8,9 @@ import styles from './styles';
 
 const AppButton: FC<IProps> = ({
     children,
+    onPress,
     activeOpacity = 0.7,
     backgroundColor = Themes.primaryColor,
-    onPress = () => {},
     ...attrs
 }) => {
   const Wrapper: ElementType = OS.isAndroid ? TouchableNativeFeedback : TouchableOpacity;
