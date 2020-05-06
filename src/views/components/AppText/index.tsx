@@ -2,7 +2,12 @@ import React, { FC } from 'react';
 import { Text } from 'react-native';
 import { IProps, ITextStyle } from './types';
 
-const AppText: FC<IProps> = ({ style, children, bold, ...attrs }) => {
+const AppText: FC<IProps> = ({
+  children,
+  bold = false,
+  style = {},
+  ...attrs
+}) => {
   const textStyles: ITextStyle = { fontFamily: bold ? 'roboto-bold' : 'roboto-regular' };
 
   return (
@@ -10,11 +15,6 @@ const AppText: FC<IProps> = ({ style, children, bold, ...attrs }) => {
       {children}
     </Text>
   );
-};
-
-AppText.defaultProps = {
-  bold: false,
-  style: {},
 };
 
 export default AppText;

@@ -1,11 +1,10 @@
-import {ReactNode} from "react";
-import {StyleProp, TextStyle} from "react-native";
+import { ReactNode } from "react";
+import { TextProps } from "react-native";
 
-export type IProps = {
-    children: ReactNode,
-    style?: StyleProp<TextStyle>,
-    bold?: boolean,
-};
+export interface IProps extends TextProps {
+    children: ReactNode;
+    bold?: boolean;
+}
 
 export type ITextStyle = {
     fontFamily: 'roboto-bold' | 'roboto-regular',
