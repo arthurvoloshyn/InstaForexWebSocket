@@ -29,3 +29,5 @@ export const getDataListWithValues = (list: IQuotesListItem[] = Lists.quoteList,
         }
     });
 };
+
+export const isNumber = (number: any): boolean => typeof number === 'number';

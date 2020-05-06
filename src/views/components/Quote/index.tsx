@@ -1,11 +1,11 @@
-import React, {useEffect, useState, memo, FC, ReactNode} from 'react';
-import {View, Animated} from 'react-native';
+import React, { useEffect, useState, memo, FC, ReactNode } from 'react';
+import { View, Animated } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Lists from "../../../constants/lists";
-import { getDataListWithValues } from '../../../utils';
+import { getDataListWithValues, isNumber } from '../../../utils';
 import AppText from "../AppText";
 import { IDataListItem } from "../../../utils/types";
-import { IProps, IAnimatedStyle } from './types';
+import { IProps, IChangeStyles, ITextValue } from './types';
 import styles from './styles';
 
 const Quote: FC<IProps> = ({ quote }) => {
@@ -31,21 +31,19 @@ const Quote: FC<IProps> = ({ quote }) => {
     ],
   });
 
-  const animatedStyle: IAnimatedStyle = {
-    backgroundColor: interpolateColor
-  };
+  const animatedStyle = { backgroundColor: interpolateColor };
   const isNegative: boolean = quote.change < 0;
   const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-        {quotesList.map(({ title, value }: IDataListItem): ReactNode => {
-            const isSymbol = title === 'Symbol';
-            const isChange = title === 'Change';
+        {quotesList.map(({ title, value = 'unknown' }: IDataListItem): ReactNode => {
+            const isSymbol: boolean = title === 'Symbol';
+            const isChange: boolean = title === 'Change';
 
             const baseStyles = isSymbol ? styles.symbol : styles.infoText;
-            const changeStyles = isChange && { color: isNegative ? '#8e2b2b' : '#008000' };
-            const textValue = isChange && !isNegative ? `+${value}` : value;
+            const changeStyles: IChangeStyles = isChange ? { color: isNegative ? '#8e2b2b' : '#008000' } : {};
+            const textValue: ITextValue = isChange && !isNegative && isNumber(value) ? `+${value}` : value;
 
             return (
                 <View key={title} style={styles.textContainer}>
