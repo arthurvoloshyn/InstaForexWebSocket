@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { View } from 'react-native';
+import Themes from "../../../constants/themes";
 import { isNumber } from "../../../utils";
 import AppText from '../AppText';
 import { IChangeStyles, ITextValue } from "../Quote/types";
@@ -16,7 +17,7 @@ const Row: FC<IProps> = ({
 
     const baseStyles = isSymbol ? styles.symbol : styles.infoText;
     const isPositiveNumber: boolean = isNumber(value) && !isNegative;
-    const changeStyles: IChangeStyles = isChange ? { color: isNegative ? '#8e2b2b' : '#008000' } : {};
+    const changeStyles: IChangeStyles = isChange ? { color: isNegative ? Themes.dangerColor : Themes.successColor } : {};
     const textValue: ITextValue = isChange && isPositiveNumber ? `+${value}` : value;
 
     return (
