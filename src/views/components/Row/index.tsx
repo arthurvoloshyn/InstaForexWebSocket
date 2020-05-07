@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import Themes from "../../../constants/themes";
 import { isNumber } from "../../../utils";
 import AppText from '../AppText';
-import { IChangeStyles, ITextValue } from "../Quote/types";
-import { IProps } from './types';
+import { IDataListItemValue } from '../../../types';
+import { IProps, IChangeStyles } from './types';
 import styles from './styles';
 
 const Row: FC<IProps> = ({
@@ -16,9 +16,9 @@ const Row: FC<IProps> = ({
     const isChange: boolean = title === 'Change';
 
     const baseStyles = isSymbol ? styles.symbol : styles.infoText;
-    const isPositiveNumber: boolean = isNumber(value) && !isNegative;
+    const isPositiveNumber: boolean = isNumber<IDataListItemValue>(value) && !isNegative;
     const changeStyles: IChangeStyles = isChange ? { color: isNegative ? Themes.dangerColor : Themes.successColor } : {};
-    const textValue: ITextValue = isChange && isPositiveNumber ? `+${value}` : value;
+    const textValue: IDataListItemValue = isChange && isPositiveNumber ? `+${value}` : value;
 
     return (
         <View style={styles.textContainer}>

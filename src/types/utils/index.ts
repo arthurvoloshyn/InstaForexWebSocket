@@ -1,7 +1,7 @@
 import { IQuotesListItem } from '../lists';
 
-type IValue = string | number;
+export type IDataListItemValue = string | number;
 
 export interface IDataListItem extends IQuotesListItem {
-    value?: IValue,
+    value?: IDataListItemValue,
 }

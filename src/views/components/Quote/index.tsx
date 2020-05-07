@@ -1,17 +1,21 @@
-import React, {FC, memo, useEffect, useState} from 'react';
-import {Animated, View} from 'react-native';
+import React, { useState, memo, useEffect, FC } from 'react';
+import { Animated, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Themes from "../../../constants/themes";
 import Lists from "../../../constants/lists";
-import {getDataListWithValues} from '../../../utils';
-import {IDataListItem} from "../../../types";
+import { getDataListWithValues } from '../../../utils';
+import usePrevious from "../../../hooks/usePrevious";
+import { IDataListItem } from "../../../types";
 import Row from '../Row';
-import {IProps} from './types';
+import { IProps } from './types';
 import styles from './styles';
 
 const Quote: FC<IProps> = ({ quote }) => {
     const value = new Animated.Value(0);
     const [animatedValue, setAnimatedValue] = useState(value);
+
+    const prevChange = usePrevious<number>(quote.change);
+    const negativeDirection = prevChange > quote.change;
     const isNegative: boolean = quote.change < 0;
 
   useEffect(() => {
@@ -28,7 +32,7 @@ const Quote: FC<IProps> = ({ quote }) => {
     inputRange: [0, 0.5, 1],
     outputRange: [
       'transparent',
-      isNegative ? Themes.dangerColor : Themes.successColor,
+        negativeDirection ? Themes.dangerColor : Themes.successColor,
       'transparent',
     ],
   });
