@@ -2,7 +2,7 @@ import { TextStyle, ViewStyle } from "react-native";
 import { IDataListItem } from "../../../types";
 
 export interface IProps extends IDataListItem {
-    isNegative: boolean;
+    isNegative: boolean,
 }
 
 export type IStyle = {
