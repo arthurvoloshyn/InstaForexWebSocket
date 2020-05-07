@@ -12,11 +12,12 @@ import styles from './styles';
 const Quote: FC<IProps> = ({ quote }) => {
     const value = new Animated.Value(0);
     const [animatedValue, setAnimatedValue] = useState(value);
+    const isNegative: boolean = quote.change < 0;
 
   useEffect(() => {
     Animated.timing(animatedValue, {
       toValue: 1,
-      duration: 1000,
+      duration: 250,
       useNativeDriver: false,
     }).start(() => {
       setAnimatedValue(value);
@@ -27,13 +28,12 @@ const Quote: FC<IProps> = ({ quote }) => {
     inputRange: [0, 0.5, 1],
     outputRange: [
       'transparent',
-        quote.change > 0 ? Themes.successColor : Themes.dangerColor,
+      isNegative ? Themes.dangerColor : Themes.successColor,
       'transparent',
     ],
   });
 
   const animatedStyle = { backgroundColor: interpolateColor };
-  const isNegative: boolean = quote.change < 0;
   const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
 
   return (

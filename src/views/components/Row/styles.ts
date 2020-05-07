@@ -8,10 +8,10 @@ const styles = StyleSheet.create<IStyle>({
     marginRight: 6,
   },
   symbol: {
-    fontSize: Layout.isSmallDevice ? 14 : 18,
+    fontSize: Layout.isSmallDevice ? 16 : 18,
   },
   infoText: {
-    fontSize: Layout.isSmallDevice ? 14 : 15,
+    fontSize: 15,
     textAlign: 'right',
   },
 });
