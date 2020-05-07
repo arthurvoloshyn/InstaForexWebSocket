@@ -15,7 +15,7 @@ const Quote: FC<IProps> = ({ quote }) => {
     const [animatedValue, setAnimatedValue] = useState(value);
 
     const prevChange = usePrevious<number>(quote.change);
-    const negativeDirection = prevChange > quote.change;
+    const negativeDirection: boolean = prevChange > quote.change;
     const isNegative: boolean = quote.change < 0;
 
   useEffect(() => {
