@@ -1,6 +1,8 @@
 import { IQuotesListItem } from '../../types';
 
-export type ILists = {
+type ILists = {
     quoteSymbols: string[],
     quoteList: IQuotesListItem[],
 };
+
+export default ILists;

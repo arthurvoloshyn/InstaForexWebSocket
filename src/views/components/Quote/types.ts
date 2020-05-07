@@ -1,4 +1,5 @@
 import { ViewStyle, TextStyle } from "react-native";
+import Themes from '../../../constants/themes';
 import { IQuote } from "../../../types";
 
 export type IProps = {
@@ -12,7 +13,7 @@ export type IStyle = {
 };
 
 export type IChangeStyles = {
-    color?: '#8e2b2b' | '#008000',
+    color?: Themes.dangerColor | Themes.successColor,
 };
 
 export type ITextValue = string | number;

@@ -28,4 +28,4 @@ export const getDataListWithValues = (list: IQuotesListItem[] = Lists.quoteList,
     });
 };
 
-export const isNumber = (number: any): boolean => typeof number === 'number';
+export const isNumber = (val: any): boolean => typeof val === 'number';

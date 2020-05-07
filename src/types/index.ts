@@ -16,5 +16,5 @@ export {
     IFetchData,
     IQuote,
     IData,
-    IQuoteMap
+    IQuoteMap,
 };

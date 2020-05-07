@@ -1,4 +1,4 @@
-import { IReducerState } from "../reducer";
+import IReducerState from "../reducer";
 
 export type IFetchData = () => void;
 

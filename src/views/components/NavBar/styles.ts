@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import Themes from "../../../constants/themes";
 import OS from "../../../services/detectDeviceOS";
 import { IStyle } from './types';

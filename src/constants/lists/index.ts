@@ -1,4 +1,4 @@
-import { ILists } from './types';
+import ILists from './types';
 
 const Lists: ILists = {
     quoteSymbols: ['GOLD', 'EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'USDCAD', 'AUDUSD'],

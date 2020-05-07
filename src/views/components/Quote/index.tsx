@@ -1,6 +1,7 @@
 import React, { useEffect, useState, memo, FC } from 'react';
 import { View, Animated } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Themes from "../../../constants/themes";
 import Lists from "../../../constants/lists";
 import { getDataListWithValues } from '../../../utils';
 import { IDataListItem } from "../../../types";
@@ -26,7 +27,7 @@ const Quote: FC<IProps> = ({ quote }) => {
     inputRange: [0, 0.5, 1],
     outputRange: [
       'transparent',
-        quote.change > 0 ? '#008000' : '#8e2b2b',
+        quote.change > 0 ? Themes.successColor : Themes.dangerColor,
       'transparent',
     ],
   });
