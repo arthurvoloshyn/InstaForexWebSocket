@@ -1,12 +1,12 @@
-import React, { useEffect, useState, memo, FC } from 'react';
-import { View, Animated } from 'react-native';
+import React, {FC, memo, useEffect, useState} from 'react';
+import {Animated, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Themes from "../../../constants/themes";
 import Lists from "../../../constants/lists";
-import { getDataListWithValues } from '../../../utils';
-import { IDataListItem } from "../../../types";
+import {getDataListWithValues} from '../../../utils';
+import {IDataListItem} from "../../../types";
 import Row from '../Row';
-import { IProps } from './types';
+import {IProps} from './types';
 import styles from './styles';
 
 const Quote: FC<IProps> = ({ quote }) => {
@@ -44,7 +44,7 @@ const Quote: FC<IProps> = ({ quote }) => {
 
         <View style={styles.changeFieldContainer}>
           <Icon
-              color={isNegative ? '#8e2b2b' : '#008000'}
+              color={isNegative ? Themes.dangerColor : Themes.successColor}
               name={`chevron-${isNegative ? 'down' : 'up'}`}
               style={styles.icon}
           />
