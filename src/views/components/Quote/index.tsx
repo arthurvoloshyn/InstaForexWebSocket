@@ -23,12 +23,10 @@ const Quote: FC<IProps> = ({ quote }) => {
       toValue: 1,
       duration: 250,
       useNativeDriver: false,
-    }).start(() => {
-      setAnimatedValue(value);
-    });
+    }).start(() => setAnimatedValue(value));
   }, [quote.change]);
 
-  const interpolateColor = animatedValue.interpolate({
+  const interpolateBackgroundColor = animatedValue.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: [
       'transparent',
@@ -37,7 +35,7 @@ const Quote: FC<IProps> = ({ quote }) => {
     ],
   });
 
-  const animatedStyle = { backgroundColor: interpolateColor };
+  const animatedStyle = { backgroundColor: interpolateBackgroundColor };
   const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
 
   return (
