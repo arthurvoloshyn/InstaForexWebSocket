@@ -15,14 +15,25 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "primaryColor": "#000000",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
+    "privacy": "public",
+    "description": "WebSocket Quotes InstaForex",
+    "githubUrl": "https://github.com/ArturW1998/InstaForexWebSocket",
+    "sdkVersion": "37.0.0",
     "ios": {
+      "bundleIdentifier": "com.arturvoloshyn.instaforexwebsocket",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.arturvoloshyn.instaforexwebsocket",
+      "versionCode": 1
     }
   }
 }
