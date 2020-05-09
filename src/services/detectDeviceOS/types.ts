@@ -1,5 +1,5 @@
 type IDetectDeviceOS = {
-    [name: string]: boolean,
+  [name: string]: boolean;
 };
 
 export default IDetectDeviceOS;

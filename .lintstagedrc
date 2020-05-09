@@ -1,0 +1,15 @@
+{
+  "**/*.+(js|jsx|yml|yaml|ts|tsx|md|graphql|mdx)": [
+    "prettier --write",
+    "git add"
+  ],
+  "**/*.+(js|jsx|ts|tsx)": [
+    "eslint --fix --max-warnings=0",
+    "git add"
+  ],
+  "**/*.+(ts|tsx)": [
+    "prettier --write",
+    "stylelint --fix --max-warnings=0",
+    "git add"
+  ]
+}

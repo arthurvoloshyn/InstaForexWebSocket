@@ -1,9 +1,9 @@
-import { IQuoteMap } from "../quote";
+import { IQuoteMap } from '../quote';
 
 type IReducerState = {
-    readonly data: IQuoteMap,
-    readonly isLoading: boolean,
-    readonly isError: boolean,
+  readonly data: IQuoteMap;
+  readonly isLoading: boolean;
+  readonly isError: boolean;
 };
 
 export default IReducerState;

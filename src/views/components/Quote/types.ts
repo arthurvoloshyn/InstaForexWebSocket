@@ -1,12 +1,12 @@
-import { ViewStyle, TextStyle } from "react-native";
-import { IQuote } from "../../../types";
+import { ViewStyle, TextStyle } from 'react-native';
+import { IQuote } from '../../../types';
 
 export type IProps = {
-    quote: IQuote,
+  quote: IQuote;
 };
 
 export type IStyle = {
-    container: ViewStyle,
-    changeFieldContainer: ViewStyle,
-    icon: ViewStyle | TextStyle,
+  container: ViewStyle;
+  changeFieldContainer: ViewStyle;
+  icon: ViewStyle | TextStyle;
 };

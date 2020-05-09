@@ -1,6 +1,6 @@
-import { ImageStyle, ViewStyle } from "react-native";
+import { ImageStyle, ViewStyle } from 'react-native';
 
 export type IStyle = {
-    image: ImageStyle,
-    wrapper: ViewStyle,
+  image: ImageStyle;
+  wrapper: ViewStyle;
 };

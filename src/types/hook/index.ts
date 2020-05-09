@@ -1,5 +1,5 @@
-import IReducerState from "../reducer";
+import IReducerState from '../reducer';
 
 export type IFetchData = () => void;
 
-export type IFetchQuotes = [IReducerState, (() => IFetchData)];
+export type IFetchQuotes = [IReducerState, () => IFetchData];

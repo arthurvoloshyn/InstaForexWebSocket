@@ -1,7 +1,7 @@
-import { ActivityIndicatorProps, ViewStyle } from "react-native";
+import { ActivityIndicatorProps, ViewStyle } from 'react-native';
 
-export interface IProps extends ActivityIndicatorProps {}
+export type IProps = ActivityIndicatorProps;
 
 export type IStyle = {
-    loader: ViewStyle,
+  loader: ViewStyle;
 };

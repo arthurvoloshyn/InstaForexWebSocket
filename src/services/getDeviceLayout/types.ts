@@ -1,9 +1,9 @@
 type ILayout = {
-    window: {
-        width: number,
-        height: number,
-    },
-    isSmallDevice: boolean,
-}
+  window: {
+    width: number;
+    height: number;
+  };
+  isSmallDevice: boolean;
+};
 
 export default ILayout;

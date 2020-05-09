@@ -1,7 +1,13 @@
 import { StyleSheet } from 'react-native';
+import Themes from '../../../constants/themes';
 import { IStyle } from './types';
 
 export default StyleSheet.create<IStyle>({
+  changeFieldContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
   container: {
     flex: 1,
     flexDirection: 'row',
@@ -10,12 +16,7 @@ export default StyleSheet.create<IStyle>({
     paddingHorizontal: 12,
     paddingVertical: 18,
     borderBottomWidth: 1,
-    borderBottomColor: 'gray',
-  },
-  changeFieldContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    borderBottomColor: Themes.mutedColor,
   },
   icon: {
     marginLeft: 4,

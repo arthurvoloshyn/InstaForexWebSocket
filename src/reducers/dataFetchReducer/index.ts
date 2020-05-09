@@ -22,7 +22,7 @@ const dataFetchReducer = (state: IReducerState = initState, action: IAction): IR
         isError: false,
         data: {
           ...state.data,
-          [action.data.symbol]: action.data
+          [action.data.symbol]: action.data,
         },
       };
     case actionTypes.FETCH_FAILURE:

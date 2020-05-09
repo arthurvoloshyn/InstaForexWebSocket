@@ -1,5 +1,5 @@
-import actionTypes from "../constants/actionTypes";
-import { IQuote } from "../types";
+import actionTypes from '../constants/actionTypes';
+import { IQuote } from '../types';
 
 type IAction<K, V = void> = V extends void ? { type: K } : { type: K } & V;
 

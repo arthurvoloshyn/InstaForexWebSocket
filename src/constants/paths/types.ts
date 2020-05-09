@@ -1,5 +1,5 @@
 type IPaths = {
-    [key: string]: string,
+  [key: string]: string;
 };
 
 export default IPaths;

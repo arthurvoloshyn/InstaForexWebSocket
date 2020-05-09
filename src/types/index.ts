@@ -7,15 +7,15 @@ import { IFetchQuotes, IFetchData } from './hook';
 import { IQuote, IData, IQuoteMap } from './quote';
 
 export {
-    IAction,
-    IContextValue,
-    IReducerState,
-    IDataListItem,
-    IDataListItemValue,
-    IQuotesListItem,
-    IFetchQuotes,
-    IFetchData,
-    IQuote,
-    IData,
-    IQuoteMap,
+  IAction,
+  IContextValue,
+  IReducerState,
+  IDataListItem,
+  IDataListItemValue,
+  IQuotesListItem,
+  IFetchQuotes,
+  IFetchData,
+  IQuote,
+  IData,
+  IQuoteMap,
 };

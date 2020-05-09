@@ -1,11 +1,11 @@
-import { StatusBarProps, ViewStyle } from "react-native";
+import { StatusBarProps, ViewStyle } from 'react-native';
 
-export interface IProps extends StatusBarProps {}
+export type IProps = StatusBarProps;
 
 export type IStyle = {
-    statusBar: ViewStyle,
+  statusBar: ViewStyle;
 };
 
 export type IStatusBarStyle = {
-    backgroundColor: string,
+  backgroundColor: string;
 };

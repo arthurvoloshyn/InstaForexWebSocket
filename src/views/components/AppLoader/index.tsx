@@ -4,11 +4,7 @@ import Themes from '../../../constants/themes';
 import { IProps } from './types';
 import styles from './styles';
 
-const AppLoader: FC<IProps> = ({
-  size = 'large',
-  color = Themes.primaryColor,
-  ...attrs
-}) => (
+const AppLoader: FC<IProps> = ({ size = 'large', color = Themes.primaryColor, ...attrs }) => (
   <View style={styles.loader}>
     <ActivityIndicator size={size} color={color} {...attrs} />
   </View>

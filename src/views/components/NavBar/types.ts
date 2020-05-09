@@ -1,10 +1,10 @@
-import { TextStyle, ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from 'react-native';
 
 export type IProps = {
-    title?: string,
-}
+  title?: string;
+};
 
 export type IStyle = {
-    navbar: ViewStyle,
-    text: TextStyle,
+  navbar: ViewStyle;
+  text: TextStyle;
 };

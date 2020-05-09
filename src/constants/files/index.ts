@@ -10,7 +10,7 @@ const Files: IFiles = {
   },
   images: {
     noItems,
-  }
+  },
 };
 
 export default Files;

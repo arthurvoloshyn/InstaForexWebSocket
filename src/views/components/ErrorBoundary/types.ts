@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type IProps = {
-    children: ReactNode,
+  children: ReactNode;
 };
 
 export type IState = {
-    hasError: boolean,
+  hasError: boolean;
 };

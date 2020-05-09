@@ -1,4 +1,4 @@
-import { IFetchFailure, IFetchInit, IFetchSuccess } from "../../actions/types";
+import { IFetchFailure, IFetchInit, IFetchSuccess } from '../../actions/types';
 
 type IAction = IFetchInit | IFetchFailure | IFetchSuccess;
 
