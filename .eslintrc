@@ -324,7 +324,7 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/camelcase": 0,
     "@typescript-eslint/ban-ts-ignore": 0,
-    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }],
 
     "jsx-a11y/anchor-is-valid": "error",
     "jsx-a11y/click-events-have-key-events": "error",
