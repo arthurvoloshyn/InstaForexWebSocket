@@ -6,8 +6,21 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "build:ios": "expo build:ios",
+    "build:android": "expo build:android",
+    "build:web": "expo build:web",
+    "build:status": "expo build:status",
+    "publish": "expo publish",
+    "test": "jest --watchAll --verbose",
+    "test:coverage": "jest --bail --coverage",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix ./",
-    "precommit": "lint-staged"
+    "lint:styles": "stylelint --fix \"src/**/*.{tx,tsx}\"",
+    "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
+    "precommit": "lint-staged",
+    "predeploy": "yarn run build:web",
+    "deploy": "now web-build -n instaforexwebsocket",
+    "prod:now": "now web-build --prod -n instaforexwebsocket",
+    "dev:now": "now dev web-build"
   },
   "jest": {
     "preset": "jest-expo"
