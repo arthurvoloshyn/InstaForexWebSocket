@@ -16,7 +16,7 @@
     "publish": "expo publish",
     "test": "jest --watchAll --verbose",
     "test:coverage": "jest --bail --coverage",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix ./",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix src __tests__ App.tsx",
     "lint:styles": "stylelint --fix \"src/**/*.{tx,tsx}\"",
     "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
     "precommit": "lint-staged",

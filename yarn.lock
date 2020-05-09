@@ -1716,9 +1716,9 @@ acorn@^6.0.1:
   integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 acorn@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.1.tgz#e35668de0b402f359de515c5482a1ab9f89a69bf"
-  integrity sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.2.0.tgz#17ea7e40d7c8640ff54a694c889c26f31704effe"
+  integrity sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
 
 after@0.8.2:
   version "0.8.2"
@@ -3268,9 +3268,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.413:
-  version "1.3.431"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.431.tgz#705dd8ef46200415ba837b31d927cdc1e43db303"
-  integrity sha512-2okqkXCIda7qDwjYhUFxPcQdZDIZZ/zBLDzVOif7WW/TSNfEhdT6SO07O1x/sFteEHX189Z//UwjbZKKCOn2Fg==
+  version "1.3.432"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.432.tgz#3bf7b191978ff2e8bc3caf811bb52b1e9f9eab25"
+  integrity sha512-/GdNhXyLP5Yl2322CUX/+Xi8NhdHBqL6lD9VJVKjH6CjoPGakvwZ5CpKgj/oOlbzuWWjOvMjDw1bBuAIRCNTlw==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -3539,9 +3539,9 @@ eslint-plugin-jest@22.4.1:
   integrity sha512-gcLfn6P2PrFAVx3AobaOzlIEevpAEf9chTpFZz7bYfc7pz8XRv7vuKTIE4hxPKZSha6XWKKplDQ0x9Pq8xX2mg==
 
 eslint-plugin-jest@^23.1.1:
-  version "23.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.9.0.tgz#7f4932eceb7ca487d171898fb9d55c05e6b36701"
-  integrity sha512-8mt5xJQIFh33W5nE7vCikkDTE4saTo08V91KjU6yI5sLQ9e8Jkp1OXkWJoIHLheFqY5OXIZdAjZmNYHSJ3IpzQ==
+  version "23.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.10.0.tgz#4738c7ca9e6513da50f4e99d7b161c1f82fa8e8f"
+  integrity sha512-cHC//nesojSO1MLxVmFJR/bUaQQG7xvMHQD8YLbsQzevR41WKm8paKDUv2wMHlUy5XLZUmNcWuflOi4apS8D+Q==
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.5.0"
 
