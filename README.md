@@ -7,7 +7,7 @@ Simple React Native WebSocket Quotes InstaForex
 - [iOS]() (download)
 - [Android apk]() (download)
 - [Android app-bundle]() (download)
-- [Web]()
+- [Web](https://instaforexwebsocket.now.sh/)
 - [Expo]()
 - [Appetize]()
 
