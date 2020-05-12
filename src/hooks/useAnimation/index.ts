@@ -16,7 +16,7 @@ const useAnimation = <T>(change: T) => {
       duration: 250,
       useNativeDriver: false,
     }).start(() => setAnimatedValue(initAnimatedValue));
-  }, [animatedValue, change, initAnimatedValue]);
+  }, [change]); // eslint-disable-line
 
   const interpolateBackgroundColor = animatedValue.interpolate({
     inputRange: [0, 0.5, 1],
