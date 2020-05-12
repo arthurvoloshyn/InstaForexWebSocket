@@ -2,7 +2,6 @@ import { useEffect, useReducer, useCallback } from 'react';
 import io from 'socket.io-client';
 import Paths from '../../constants/paths';
 import Lists from '../../constants/lists';
-import { mockQuoteMsg } from '../../mocks';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchFailure, fetchInit, fetchSuccess } from '../../actions';
 import { IData, IFetchQuotes, IFetchData } from '../../types';
@@ -25,9 +24,7 @@ const useFetchQuotes = (): IFetchQuotes => {
         client.emit('unsubscribe', Lists.quoteSymbols);
       });
 
-      client.on('quotes', (data: IData) => {
-        const { msg = mockQuoteMsg }: IData = data;
-
+      client.on('quotes', ({ msg }: IData) => {
         dispatch(fetchSuccess(msg));
       });
     } catch {

@@ -1,46 +1,25 @@
-import React, { useState, memo, useEffect, FC } from 'react';
+import React, { memo, FC } from 'react';
 import { Animated, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Themes from '../../../constants/themes';
 import Lists from '../../../constants/lists';
 import { getDataListWithValues } from '../../../utils';
-import usePrevious from '../../../hooks/usePrevious';
-import { IDataListItem } from '../../../types';
+import useAnimation from '../../../hooks/useAnimation';
 import Row from '../Row';
+import { IDataListItem } from '../../../types';
 import { IProps } from './types';
 import styles from './styles';
 
 const Quote: FC<IProps> = ({ quote }) => {
-  const initAnimatedValue = new Animated.Value(0);
-  const [animatedValue, setAnimatedValue] = useState(initAnimatedValue);
-
-  const prevChange = usePrevious<number>(quote.change);
-  const negativeDirection: boolean = prevChange > quote.change;
   const isNegative: boolean = quote.change < 0;
+  const [backgroundColor] = useAnimation<number>(quote.change);
 
-  useEffect(() => {
-    Animated.timing(animatedValue, {
-      toValue: 1,
-      duration: 250,
-      useNativeDriver: false,
-    }).start(() => setAnimatedValue(initAnimatedValue));
-  }, [animatedValue, initAnimatedValue, quote.change]);
-
-  const interpolateBackgroundColor = animatedValue.interpolate({
-    inputRange: [0, 0.5, 1],
-    outputRange: [
-      'transparent',
-      negativeDirection ? Themes.dangerColor : Themes.successColor,
-      'transparent',
-    ],
-  });
-
-  const animatedStyle = { backgroundColor: interpolateBackgroundColor };
+  const animatedStyle = { backgroundColor };
   const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-      {quotesList.map(({ title, value }: IDataListItem) => (
+      {quotesList.map(({ title, value }) => (
         <Row key={title} title={title} value={value} isNegative={isNegative} />
       ))}
 
