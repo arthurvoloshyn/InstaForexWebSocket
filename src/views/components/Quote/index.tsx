@@ -24,7 +24,7 @@ const Quote: FC<IProps> = ({ quote }) => {
       duration: 250,
       useNativeDriver: false,
     }).start(() => setAnimatedValue(initAnimatedValue));
-  }, [animatedValue, quote.change, initAnimatedValue]);
+  }, [animatedValue, initAnimatedValue, quote.change]);
 
   const interpolateBackgroundColor = animatedValue.interpolate({
     inputRange: [0, 0.5, 1],
