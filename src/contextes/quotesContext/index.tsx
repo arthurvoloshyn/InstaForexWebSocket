@@ -14,7 +14,6 @@ const initContextValue: IContextValue = {
 const QuotesContext = createContext<IContextValue>(initContextValue);
 
 const QuotesProvider: FC<IProps> = ({ children }) => {
-  // eslint-disable-next-line standard/array-bracket-even-spacing
   const [{ data: quotes = {}, isLoading, isError }, fetchData]: IFetchQuotes = useFetchQuotes();
   const data: IQuote[] = sortBySymbol(quotes);
 

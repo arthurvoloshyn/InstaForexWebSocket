@@ -1,8 +1,8 @@
 import { Dimensions } from 'react-native';
-import ILayout from './types';
+import ILayout, { ISmallDeviceWidth } from './types';
 
 const { width, height } = Dimensions.get('window');
-const smallDeviceWidth = 375;
+const smallDeviceWidth: ISmallDeviceWidth = 375;
 
 const Layout: ILayout = {
   window: {

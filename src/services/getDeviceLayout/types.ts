@@ -6,4 +6,6 @@ type ILayout = {
   isSmallDevice: boolean;
 };
 
+export type ISmallDeviceWidth = number;
+
 export default ILayout;
