@@ -11,8 +11,8 @@ import { IProps } from './types';
 import styles from './styles';
 
 const Quote: FC<IProps> = ({ quote }) => {
-  const isNegative: boolean = quote.change < 0;
   const [backgroundColor] = useAnimation<number>(quote.change);
+  const isNegative: boolean = quote.change < 0;
 
   const animatedStyle = { backgroundColor };
   const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
