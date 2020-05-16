@@ -20,7 +20,7 @@
     "lint:styles": "stylelint --fix \"src/**/*.{tx,tsx}\"",
     "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
     "precommit": "lint-staged",
-    "predeploy": "yarn run build:web",
+    "predeploy": "npm run build:web",
     "deploy": "now web-build -n instaforexwebsocket",
     "prod:now": "now web-build --prod -n instaforexwebsocket",
     "dev:now": "now dev web-build"
@@ -89,7 +89,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run precommit"
+      "pre-commit": "npm run precommit"
     }
   },
   "private": true

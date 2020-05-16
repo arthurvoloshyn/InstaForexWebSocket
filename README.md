@@ -13,7 +13,7 @@ Simple React Native WebSocket Quotes InstaForex
 
 ### To run
 
-- You'll need to have [git](https://git-scm.com/) and [yarn](https://classic.yarnpkg.com/en/) installed in your system.
+- You'll need to have [git](https://git-scm.com/) and [node](https://nodejs.org/en/) installed in your system.
 
 ```
 git clone https://github.com/ArturW1998/InstaForexWebSocket.git
@@ -22,27 +22,27 @@ git clone https://github.com/ArturW1998/InstaForexWebSocket.git
 - Then install the dependencies:
 
 ```
-yarn install
+npm install
 ```
 
 - Run development server:
 
 ```
-yarn start
+npm start
 ```
 
 ### To build the production package
 
 ```
-yarn run build:ios
+npm run build:ios
 ```
 
 ```
-yarn run build:android
+npm run build:android
 ```
 
 ```
-yarn run build:web
+npm run build:web
 ```
 
 ### Eslint
@@ -50,7 +50,7 @@ yarn run build:web
 To do the actual linting, run:
 
 ```
-yarn run lint
+npm run lint
 ```
 
 ### Stylelint
@@ -58,7 +58,7 @@ yarn run lint
 To do the style linting, run:
 
 ```
-yarn run lint:styles
+npm run lint:styles
 ```
 
 ### Jest tests
@@ -66,7 +66,7 @@ yarn run lint:styles
 To run tests using Jest:
 
 ```
-yarn test
+npm test
 ```
 
 ### Contribute
