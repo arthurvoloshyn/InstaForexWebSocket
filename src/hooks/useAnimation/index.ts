@@ -22,7 +22,7 @@ const useAnimation = <T>(change: T) => {
     inputRange: [0, 0.5, 1],
     outputRange: [
       'transparent',
-      negativeDirection ? Themes.dangerColor : Themes.successColor,
+      negativeDirection ? Themes.lightDangerColor : Themes.lightSuccessColor,
       'transparent',
     ],
   });
