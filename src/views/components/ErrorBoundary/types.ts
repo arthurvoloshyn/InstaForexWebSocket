@@ -7,3 +7,5 @@ export type IProps = {
 export type IState = {
   hasError: boolean;
 };
+
+export type IGetDerivedStateFromError = Partial<IState> | null;
