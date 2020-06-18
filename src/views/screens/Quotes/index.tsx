@@ -1,4 +1,4 @@
-import React, { useContext, FC } from 'react';
+import React, { useContext, FC, ReactElement } from 'react';
 import { SafeAreaView } from 'react-native';
 import Themes from '../../../constants/themes';
 import { QuotesContext } from '../../../contextes/quotesContext';
@@ -9,8 +9,10 @@ import AppButton from '../../components/AppButton';
 import { IContextValue } from '../../../types';
 import styles from './styles';
 
-const Quotes: FC = () => {
-  const { data, isError, isLoading, fetchData } = useContext<IContextValue>(QuotesContext);
+const Quotes: FC = (): ReactElement => {
+  const { data, isError, isLoading, fetchData } = useContext<IContextValue>(
+    QuotesContext,
+  );
 
   if (isError) {
     return (

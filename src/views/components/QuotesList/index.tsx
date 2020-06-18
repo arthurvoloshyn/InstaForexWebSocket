@@ -5,7 +5,11 @@ import Quote from '../Quote';
 import { IQuote } from '../../../types/quote';
 import { IProps, IRenderItem } from './types';
 
-const QuotesList: FC<IProps> = ({ quotes, onRefresh, refreshing }) => {
+const QuotesList: FC<IProps> = ({
+  quotes,
+  onRefresh,
+  refreshing,
+}): ReactElement => {
   const renderItem = useCallback(
     ({ item }: IRenderItem): ReactElement => <Quote quote={item} />,
     [],

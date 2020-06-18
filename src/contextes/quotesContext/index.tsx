@@ -1,4 +1,4 @@
-import React, { createContext, FC } from 'react';
+import React, { createContext, FC, ReactElement } from 'react';
 import { sortBySymbol } from '../../utils';
 import { initState } from '../../reducers/dataFetchReducer';
 import useFetchQuotes from '../../hooks/useFetchQuotes';
@@ -13,8 +13,11 @@ const initContextValue: IContextValue = {
 
 const QuotesContext = createContext<IContextValue>(initContextValue);
 
-const QuotesProvider: FC<IProps> = ({ children }) => {
-  const [{ data: quotes = {}, isLoading, isError }, fetchData]: IFetchQuotes = useFetchQuotes();
+const QuotesProvider: FC<IProps> = ({ children }): ReactElement => {
+  const [
+    { data: quotes = {}, isLoading, isError },
+    fetchData,
+  ]: IFetchQuotes = useFetchQuotes();
   const data: IQuote[] = sortBySymbol(quotes);
 
   const value: IContextValue = {
@@ -24,7 +27,9 @@ const QuotesProvider: FC<IProps> = ({ children }) => {
     fetchData,
   };
 
-  return <QuotesContext.Provider value={value}>{children}</QuotesContext.Provider>;
+  return (
+    <QuotesContext.Provider value={value}>{children}</QuotesContext.Provider>
+  );
 };
 
 export { QuotesContext, QuotesProvider };

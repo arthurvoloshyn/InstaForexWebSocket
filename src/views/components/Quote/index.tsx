@@ -1,4 +1,4 @@
-import React, { memo, FC } from 'react';
+import React, { memo, FC, ReactElement } from 'react';
 import { Animated, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Themes from '../../../constants/themes';
@@ -10,12 +10,15 @@ import { IDataListItem } from '../../../types';
 import { IProps } from './types';
 import styles from './styles';
 
-const Quote: FC<IProps> = ({ quote }) => {
+const Quote: FC<IProps> = ({ quote }): ReactElement => {
   const [backgroundColor] = useAnimation<number>(quote.change);
   const isNegative: boolean = quote.change < 0;
 
   const animatedStyle = { backgroundColor };
-  const quotesList: IDataListItem[] = getDataListWithValues(Lists.quoteList, quote);
+  const quotesList: IDataListItem[] = getDataListWithValues(
+    Lists.quoteList,
+    quote,
+  );
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>

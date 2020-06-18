@@ -3,7 +3,7 @@ import ErrorIndicator from '../ErrorIndicator';
 import { IProps, IState, IGetDerivedStateFromError } from './types';
 
 class ErrorBoundary extends Component<IProps, IState> {
-  state = {
+  readonly state = {
     hasError: false,
   };
 

@@ -7,4 +7,7 @@ export type IFetchInit = IAction<actionTypes.FETCH_INIT>;
 
 export type IFetchFailure = IAction<actionTypes.FETCH_FAILURE>;
 
-export type IFetchSuccess = IAction<actionTypes.FETCH_SUCCESS, { data: IQuote }>;
+export type IFetchSuccess = IAction<
+  actionTypes.FETCH_SUCCESS,
+  { data: IQuote }
+>;

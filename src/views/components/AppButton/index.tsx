@@ -1,4 +1,4 @@
-import React, { FC, ElementType } from 'react';
+import React, { FC, ElementType, ReactElement } from 'react';
 import { View, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
 import Themes from '../../../constants/themes';
 import OS from '../../../services/detectDeviceOS';
@@ -12,8 +12,10 @@ const AppButton: FC<IProps> = ({
   activeOpacity = 0.7,
   backgroundColor = Themes.primaryColor,
   ...attrs
-}) => {
-  const Wrapper: ElementType = OS.isAndroid ? TouchableNativeFeedback : TouchableOpacity;
+}): ReactElement => {
+  const Wrapper: ElementType = OS.isAndroid
+    ? TouchableNativeFeedback
+    : TouchableOpacity;
   const buttonStyles: IButtonStyle = { backgroundColor };
 
   return (

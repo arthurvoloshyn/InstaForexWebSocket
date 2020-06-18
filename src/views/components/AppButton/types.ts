@@ -6,7 +6,9 @@ import {
   TouchableOpacityProps,
 } from 'react-native';
 
-export interface IProps extends TouchableNativeFeedbackProps, TouchableOpacityProps {
+export interface IProps
+  extends TouchableNativeFeedbackProps,
+    TouchableOpacityProps {
   children: ReactNode;
   backgroundColor?: string;
 }

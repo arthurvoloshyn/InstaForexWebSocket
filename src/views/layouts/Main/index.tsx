@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { View } from 'react-native';
 import Themes from '../../../constants/themes';
 import OS from '../../../services/detectDeviceOS';
@@ -7,7 +7,7 @@ import AppStatusBar from '../../components/AppStatusBar';
 import NavBar from '../../components/NavBar';
 import styles from './styles';
 
-const Main: FC = () => (
+const Main: FC = (): ReactElement => (
   <View style={styles.container}>
     <AppStatusBar
       backgroundColor={OS.isIOS ? Themes.lightColor : Themes.primaryColor}
