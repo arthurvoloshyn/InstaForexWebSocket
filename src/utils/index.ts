@@ -15,9 +15,9 @@ export const getDataListWithValues = (
 ): IDataListItem[] => {
   if (!data) return list;
 
-  const { symbol, ask, bid, change } = data;
+  const { symbol, ask, bid, change }: IQuote = data;
 
-  return list.map(item => {
+  return list.map((item: IQuotesListItem) => {
     switch (item.title) {
       case 'Symbol':
         return { ...item, value: symbol };

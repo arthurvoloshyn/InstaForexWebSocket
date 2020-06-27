@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { View } from 'react-native';
+import { View, TextStyle } from 'react-native';
 import Themes from '../../../constants/themes';
 import { isNumber } from '../../../utils';
 import AppText from '../AppText';
@@ -15,7 +15,7 @@ const Row: FC<IProps> = ({
   const isSymbol: boolean = title === 'Symbol';
   const isChange: boolean = title === 'Change';
 
-  const baseStyles = isSymbol ? styles.symbol : styles.infoText;
+  const baseStyles: TextStyle = isSymbol ? styles.symbol : styles.infoText;
   const isPositiveNumber: boolean =
     isNumber<IDataListItemValue>(value) && !isNegative;
   const changeStyles: IChangeStyles = isChange

@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react';
-import { Text } from 'react-native';
+import { Text, TextProps } from 'react-native';
 import { IProps, ITextStyle } from './types';
 
 const AppText: FC<IProps> = ({
@@ -13,7 +13,7 @@ const AppText: FC<IProps> = ({
   };
 
   return (
-    <Text style={[textStyles, style]} {...attrs}>
+    <Text style={[textStyles, style]} {...(attrs as TextProps)}>
       {children}
     </Text>
   );

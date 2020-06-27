@@ -3,7 +3,7 @@ import { View, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
 import Themes from '../../../constants/themes';
 import OS from '../../../services/detectDeviceOS';
 import AppText from '../AppText';
-import { IProps, IButtonStyle } from './types';
+import { IProps, IButtonStyle, ITouchableProps } from './types';
 import styles from './styles';
 
 const AppButton: FC<IProps> = ({
@@ -19,7 +19,11 @@ const AppButton: FC<IProps> = ({
   const buttonStyles: IButtonStyle = { backgroundColor };
 
   return (
-    <Wrapper onPress={onPress} activeOpacity={activeOpacity} {...attrs}>
+    <Wrapper
+      onPress={onPress}
+      activeOpacity={activeOpacity}
+      {...(attrs as ITouchableProps)}
+    >
       <View style={[styles.button, buttonStyles]}>
         <AppText bold style={styles.text}>
           {children}

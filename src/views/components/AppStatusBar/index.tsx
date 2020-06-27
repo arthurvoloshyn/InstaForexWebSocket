@@ -16,7 +16,7 @@ const AppStatusBar: FC<IProps> = ({
       <StatusBar
         translucent={translucent}
         backgroundColor={backgroundColor}
-        {...attrs}
+        {...(attrs as IProps)}
       />
     </View>
   );

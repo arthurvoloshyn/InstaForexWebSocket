@@ -10,7 +10,7 @@ const AppLoader: FC<IProps> = ({
   ...attrs
 }): ReactElement => (
   <View style={styles.loader}>
-    <ActivityIndicator size={size} color={color} {...attrs} />
+    <ActivityIndicator size={size} color={color} {...(attrs as IProps)} />
   </View>
 );
 

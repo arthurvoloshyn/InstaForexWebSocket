@@ -22,7 +22,7 @@ const Quote: FC<IProps> = ({ quote }): ReactElement => {
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-      {quotesList.map(({ title, value }) => (
+      {quotesList.map(({ title, value }: IDataListItem) => (
         <Row key={title} title={title} value={value} isNegative={isNegative} />
       ))}
 
