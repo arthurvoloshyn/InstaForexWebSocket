@@ -13,7 +13,7 @@ const AppButton: FC<IProps> = ({
   backgroundColor = Themes.primaryColor,
   ...attrs
 }): ReactElement => {
-  const Wrapper: ElementType = OS.isAndroid
+  const Wrapper: ElementType<ITouchableProps> = OS.isAndroid
     ? TouchableNativeFeedback
     : TouchableOpacity;
   const buttonStyles: IButtonStyle = { backgroundColor };
