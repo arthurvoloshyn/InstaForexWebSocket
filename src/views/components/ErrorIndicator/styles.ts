@@ -8,7 +8,11 @@ const styles = StyleSheet.create<IStyle>({
     flex: 1,
     justifyContent: 'center',
   },
-  text: {
+  message: {
+    marginBottom: 20,
+    maxWidth: 305,
+  },
+  title: {
     color: Themes.dangerColor,
     fontSize: 20,
     marginBottom: 20,

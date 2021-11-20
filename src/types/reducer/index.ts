@@ -3,7 +3,7 @@ import { IQuoteMap } from '../quote';
 type IReducerState = {
   readonly data: IQuoteMap;
   readonly isLoading: boolean;
-  readonly isError: boolean;
+  readonly errorMessage: null | string;
 };
 
 export default IReducerState;

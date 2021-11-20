@@ -4,7 +4,7 @@ import { IFetchData } from '../hook';
 type IContextValue = {
   fetchData: () => IFetchData;
   isLoading: boolean;
-  isError: boolean;
+  errorMessage: string | null;
   data: IQuote[];
 };
 

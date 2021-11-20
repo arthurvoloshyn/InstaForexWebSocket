@@ -10,13 +10,13 @@ import { IContextValue } from '../../../types';
 import styles from './styles';
 
 const Quotes: FC = (): ReactElement => {
-  const { data, isError, isLoading, fetchData } = useContext<IContextValue>(
-    QuotesContext,
-  );
+  const { data, errorMessage, isLoading, fetchData } = useContext<
+    IContextValue
+  >(QuotesContext);
 
-  if (isError) {
+  if (errorMessage) {
     return (
-      <ErrorIndicator>
+      <ErrorIndicator message={errorMessage}>
         <AppButton backgroundColor={Themes.dangerColor} onPress={fetchData}>
           Try again
         </AppButton>

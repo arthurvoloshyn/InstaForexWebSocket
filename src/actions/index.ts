@@ -6,6 +6,7 @@ export const fetchSuccess = (data: IQuote): IAction => ({
   type: actionTypes.FETCH_SUCCESS,
   data,
 });
-export const fetchFailure = (): IAction => ({
+export const fetchFailure = (errorMessage: string): IAction => ({
   type: actionTypes.FETCH_FAILURE,
+  errorMessage,
 });

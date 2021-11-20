@@ -3,7 +3,7 @@ import { IReducerState, IAction } from '../../types';
 
 export const initState: IReducerState = {
   isLoading: false,
-  isError: false,
+  errorMessage: null,
   data: {},
 };
 
@@ -16,13 +16,13 @@ const dataFetchReducer = (
       return {
         ...state,
         isLoading: true,
-        isError: false,
+        errorMessage: null,
       };
     case actionTypes.FETCH_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        isError: false,
+        errorMessage: null,
         data: {
           ...state.data,
           [action.data.symbol]: action.data,
@@ -32,7 +32,7 @@ const dataFetchReducer = (
       return {
         ...state,
         isLoading: false,
-        isError: true,
+        errorMessage: action.errorMessage,
       };
     default:
       return state;

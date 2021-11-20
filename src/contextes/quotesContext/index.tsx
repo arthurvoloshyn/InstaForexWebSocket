@@ -15,14 +15,14 @@ const QuotesContext = createContext<IContextValue>(initContextValue);
 
 const QuotesProvider: FC<IProps> = ({ children }): ReactElement => {
   const [
-    { data: quotes = {}, isLoading, isError },
+    { data: quotes = {}, isLoading, errorMessage },
     fetchData,
   ]: IFetchQuotes = useFetchQuotes();
   const data: IQuote[] = sortBySymbol(quotes);
 
   const value: IContextValue = {
     data,
-    isError,
+    errorMessage,
     isLoading,
     fetchData,
   };
