@@ -7,7 +7,7 @@ Simple React Native WebSocket Quotes InstaForex
 - [iOS](https://expo.io/artifacts/1c7a05bd-d00e-4c72-9971-5b90fffb4aa3) (download)
 - [Android apk](https://expo.io/artifacts/0fe6c745-02c9-469c-9d80-d856f7bf20e4) (download)
 - [Android app-bundle](https://expo.io/artifacts/fd102b8d-b270-4cdc-aa43-a308cdaf90e5) (download)
-- [Web](https://instaforexwebsocket.arturw1998.vercel.app/)
+- [Web](https://instaforexwebsocket.vercel.app/)
 - [Expo](https://expo.io/@arthurvoloshyn/InstaForexWebSocket/)
 - [Appetize](https://expo.io/appetize-simulator?url=https://expo.io/@arthurvoloshyn/InstaForexWebSocket/)
 
