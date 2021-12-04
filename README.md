@@ -69,17 +69,21 @@ To run tests using Jest:
 npm test
 ```
 
+### If the iOS build is not installable on your simulator because of "... is damaged and can't be opened.", please run:
+
+```
+xattr -rd com.apple.quarantine /path/to/your.app
+```
+
 ### Contribute
 
 Please contribute to the project if you know how to make it better, including this README :)
 
+---
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
-
-### 🚨 If the iOS build is not installable on your simulator because of "... is damaged and can't be opened.", please run:
-
-xattr -rd com.apple.quarantine /path/to/your.app
 
 ## Table of Contents
 
