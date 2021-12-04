@@ -4,7 +4,7 @@ Simple React Native WebSocket Quotes InstaForex
 
 ### Demo
 
-- [iOS](https://expo.dev/artifacts/37f6482f-f8fd-4c7b-8ee9-a24f3f5e5830) (download)
+- [iOS simulator](https://expo.dev/artifacts/37f6482f-f8fd-4c7b-8ee9-a24f3f5e5830) (download)
 - [Android apk](https://expo.dev/artifacts/97c2351a-3a08-42d7-822d-d71423cc954d) (download)
 - [Android app-bundle](https://expo.dev/artifacts/ed2c6be0-8e73-4cf9-af49-fe91d2e680b4) (download)
 - [Web](https://instaforexwebsocket.vercel.app/)
@@ -76,6 +76,10 @@ Please contribute to the project if you know how to make it better, including th
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+
+### 🚨 If the iOS build is not installable on your simulator because of "... is damaged and can't be opened.", please run:
+
+xattr -rd com.apple.quarantine /path/to/your.app
 
 ## Table of Contents
 
